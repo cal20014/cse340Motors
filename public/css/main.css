@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+html *,
+html *::before,
+html *::after {
+  box-sizing: inherit;
+}
+html body {
+  font-size: 1.6rem;
+  margin: 0;
+}
+html img {
+  max-width: 100%;
+}
+
+.header .hero-section .heading-text-container {
+  display: flex;
+  justify-content: space-between;
+}
+.header .hero-section .heading-text-container .title-text {
+  font-size: 4.8rem;
+}
+.header .hero-section .heading-text-container .link {
+  text-decoration: none;
+  color: #242332;
+}
+.header .hero-section .nav .nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #242332;
+}
+.header .hero-section .nav .nav-list .list-item {
+  list-style: none;
+  padding: 1rem;
+}
+.header .hero-section .nav .nav-list .list-item .link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main .hero-section .overlay {
+  position: absolute;
+  top: 25rem;
+  background-color: rgba(254, 254, 254, 0.1607843137);
+  padding: 1rem;
+  border-radius: 0.6rem;
+  color: #4c96d7;
+}
+.main .hero-section .overlay .heading-text {
+  padding: 0;
+  margin: 0;
+}
+.main .hero-section .overlay .list {
+  padding: 0;
+  margin: 0.2rem;
+  list-style: none;
+}
+.main .hero-section .overlay .list .item {
+  padding: 0;
+  font-weight: 600;
+}
+.main .review-section {
+  padding: 1rem 0;
+}
+.main .upgrades-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .upgrades-section .img {
+  background-color: #4c96d7;
+}/*# sourceMappingURL=main.css.map */
