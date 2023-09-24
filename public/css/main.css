@@ -68,10 +68,10 @@ html img {
   position: absolute;
   top: 24rem;
   left: 1em;
-  background-color: rgba(186, 174, 174, 0.1176470588);
+  background-color: rgba(255, 249, 249, 0.1176470588);
   padding: 2rem;
   border-radius: 0.6rem;
-  color: #055499;
+  color: #1d4289;
   padding: 1rem;
 }
 .main .hero-section .overlay .heading-text {
@@ -84,7 +84,7 @@ html img {
   padding-top: 20rem;
 }
 .main .hero-section .overlay .own-today {
-  background-color: #055499;
+  background-color: #1d4289;
   color: #fff;
   padding: 1rem 2rem;
   font-size: 2rem;
@@ -115,7 +115,7 @@ html img {
   flex-basis: 25%;
 }
 .main .upgrades-section .upgrades-fig .img-container {
-  background-color: #055499;
+  background-color: #1d4289;
   display: flex;
   justify-content: center;
   align-items: center;
