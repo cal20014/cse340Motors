@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 html {
   font-size: 62.5%;
   font-family: "Roboto", sans-serif;
@@ -11,7 +10,7 @@ html *::after {
 }
 html body {
   font-size: 1.6rem;
-  margin: 0;
+  margin: 1rem;
 }
 html img {
   max-width: 100%;
@@ -21,44 +20,73 @@ html img {
   display: flex;
   justify-content: space-between;
 }
+.header .hero-section .heading-text-container .siteName .link {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #242332;
+  text-decoration: none;
+}
 .header .hero-section .heading-text-container .title-text {
-  font-size: 4.8rem;
+  font-size: 3.2rem;
 }
 .header .hero-section .heading-text-container .link {
   text-decoration: none;
   color: #242332;
 }
-.header .hero-section .nav .nav-list {
+
+.nav .nav-container .nav-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: #242332;
 }
-.header .hero-section .nav .nav-list .list-item {
+.nav .nav-container .nav-list .list-item {
   list-style: none;
   padding: 1rem;
 }
-.header .hero-section .nav .nav-list .list-item .link {
+.nav .nav-container .nav-list .list-item .link:hover {
+  color: #ffdf11;
+}
+.nav .nav-container .nav-list .list-item .link {
   color: #fff;
   text-decoration: none;
 }
 
+.main .hero-section .title-text {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #242332;
+  margin: 0 0.5rem;
+}
+.main .hero-section .hero-img {
+  display: block;
+  margin: auto;
+}
 .main .hero-section .overlay {
   position: absolute;
-  top: 25rem;
+  top: 20rem;
+  left: 1em;
   background-color: rgba(254, 254, 254, 0.1607843137);
   padding: 1rem;
   border-radius: 0.6rem;
-  color: #4c96d7;
+  color: #4c7fd7;
+  padding: 1rem;
 }
 .main .hero-section .overlay .heading-text {
   padding: 0;
   margin: 0;
+  font-size: 2.5rem;
+}
+.main .hero-section .overlay .heading-text .own-today-img {
+  margin-top: 2rem;
+  padding-top: 20rem;
 }
 .main .hero-section .overlay .list {
   padding: 0;
   margin: 0.2rem;
   list-style: none;
+  padding-bottom: 2rem;
+  font-size: 1.75rem;
 }
 .main .hero-section .overlay .list .item {
   padding: 0;
@@ -71,6 +99,51 @@ html img {
   display: flex;
   flex-wrap: wrap;
 }
-.main .upgrades-section .img {
-  background-color: #4c96d7;
+.main .upgrades-section .img-text {
+  text-align: center;
+}
+.main .upgrades-section .upgrades-fig {
+  flex-basis: 25%;
+}
+.main .upgrades-section .upgrades-fig .img-container {
+  background-color: #4c7fd7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin: 0 20rem;
+  }
+  .main .hero-section {
+    padding: 0 0 2rem;
+  }
+  .main .hero-section .hero-img {
+    width: 65%;
+  }
+  .main .hero-section .heading-text {
+    font-size: 3rem;
+  }
+  .main .hero-section .overlay {
+    top: 22rem;
+    left: 20em;
+  }
+  .main .hero-section .list {
+    font-size: 2rem;
+  }
+  .upgrades-review-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    padding: 2rem 0 0;
+  }
+  .review-section {
+    grid-column: 2/3;
+  }
+  .upgrades-section {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
 }/*# sourceMappingURL=main.css.map */
