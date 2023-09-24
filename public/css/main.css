@@ -38,7 +38,7 @@ html img {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #242332;
+  background-color: #121118;
 }
 .nav .nav-container .nav-list .list-item {
   list-style: none;
@@ -69,7 +69,7 @@ html img {
   background-color: rgba(254, 254, 254, 0.1607843137);
   padding: 1rem;
   border-radius: 0.6rem;
-  color: #4c96d7;
+  color: #055499;
   padding: 1rem;
 }
 .main .hero-section .overlay .heading-text {
@@ -81,11 +81,17 @@ html img {
   margin-top: 2rem;
   padding-top: 20rem;
 }
+.main .hero-section .overlay .own-today {
+  background-color: #055499;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+}
 .main .hero-section .overlay .list {
   padding: 0;
   margin: 0.2rem;
   list-style: none;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   font-size: 1.75rem;
 }
 .main .hero-section .overlay .list .item {
@@ -106,7 +112,7 @@ html img {
   flex-basis: 25%;
 }
 .main .upgrades-section .upgrades-fig .img-container {
-  background-color: #4c96d7;
+  background-color: #055499;
   display: flex;
   justify-content: center;
   align-items: center;
