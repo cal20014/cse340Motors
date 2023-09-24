@@ -69,7 +69,7 @@ html img {
   background-color: rgba(254, 254, 254, 0.1607843137);
   padding: 1rem;
   border-radius: 0.6rem;
-  color: #4c7fd7;
+  color: #4c96d7;
   padding: 1rem;
 }
 .main .hero-section .overlay .heading-text {
@@ -106,7 +106,7 @@ html img {
   flex-basis: 25%;
 }
 .main .upgrades-section .upgrades-fig .img-container {
-  background-color: #4c7fd7;
+  background-color: #4c96d7;
   display: flex;
   justify-content: center;
   align-items: center;
