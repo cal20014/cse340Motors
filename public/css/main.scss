@@ -4,30 +4,28 @@ html {
   font-size: 62.5%;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+}
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-  body {
-    font-size: 1.6rem;
-    margin: 1rem;
-    background-image: url("../images/site/checkerboard.jpg");
-    background-size: cover;
-  }
+body {
+  font-size: 1.6rem;
+  background-image: url("../images/site/checkerboard.jpg");
+  margin: 0;
+}
 
-  #wrapper {
-    max-width: 75vw;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 2rem;
-  }
+img {
+  max-width: 100%;
+}
 
-  img {
-    max-width: 100%;
-  }
+#wrapper {
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
 }
 
 .header {
@@ -79,6 +77,17 @@ html {
 
 .main {
   .hero-section {
+    .hero-img-container {
+      background-image: url("../images/vehicles/delorean.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 90%;
+      display: flex;
+      justify-content: left;
+      align-items: flex-start;
+      padding: 1rem 0 3rem;
+    }
     .title-text {
       font-size: 3.2rem;
       font-weight: 700;
@@ -86,91 +95,87 @@ html {
       margin: 0 0.5rem;
       padding: 1rem 0 3rem;
     }
-    .hero-img {
-      display: block;
-      margin: auto;
-    }
-    .overlay {
-      position: absolute;
-      top: 24rem;
-      left: 1em;
-      background-color: #ffffffa5;
-      padding: 2rem;
-      color: $primary-color;
+  }
+  .hero-img {
+    display: block;
+    margin: auto;
+  }
+  .overlay {
+    background-color: #a11c1ca5;
+    color: $primary-color;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .heading-text {
+    padding: 0;
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  .own-today-img {
+  }
+}
+.own-today {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.list {
+  padding: 0;
+  margin: 0.2rem;
+  list-style: none;
+  padding-bottom: 3rem;
+  font-size: 1.75rem;
+
+  .item {
+    padding: 0;
+    font-weight: 600;
+  }
+}
+
+.review-section {
+  padding: 1rem 0;
+}
+
+.upgrades-section {
+  display: flex;
+  flex-wrap: wrap;
+  .img-text {
+    text-align: center;
+  }
+  .upgrades-fig {
+    flex-basis: 25%;
+    .img-container {
+      background-color: $primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 1rem;
-      .heading-text {
-        padding: 0;
-        margin: 0;
-        font-size: 2.5rem;
-
-        .own-today-img {
-          margin-top: 2rem;
-          padding-top: 20rem;
-        }
-      }
-      .own-today {
-        background-color: $primary-color;
-        color: #fff;
-        padding: 1rem 2rem;
-        font-size: 2rem;
-        font-weight: 600;
-        margin: 0;
-      }
-      .list {
-        padding: 0;
-        margin: 0.2rem;
-        list-style: none;
-        padding-bottom: 3rem;
-        font-size: 1.75rem;
-
-        .item {
-          padding: 0;
-          font-weight: 600;
-        }
-      }
-    }
-  }
-
-  .review-section {
-    padding: 1rem 0;
-  }
-
-  .upgrades-section {
-    display: flex;
-    flex-wrap: wrap;
-    .img-text {
-      text-align: center;
-    }
-    .upgrades-fig {
-      flex-basis: 25%;
-      .img-container {
-        background-color: $primary-color;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-      }
     }
   }
 }
 
 @media (min-width: 768px) {
+  #wrapper {
+    max-width: 1080px;
+    margin: 1rem auto;
+  }
   .main {
-    max-width: 1000px;
-    margin: 0 20rem;
     .hero-section {
       padding: 0 0 2rem;
       .hero-img {
         width: 65%;
+        .hero-img-container {
+        }
       }
       .heading-text {
         font-size: 3rem;
       }
       .overlay {
-        top: 24rem;
-        left: 20em;
-        background-color: #fefbfbd2;
-        margin: 3rem;
+        margin-left: 10rem;
       }
       .list {
         font-size: 2rem;

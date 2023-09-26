@@ -4,25 +4,27 @@ html {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
-html *,
-html *::before,
-html *::after {
+
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
-html body {
+
+body {
   font-size: 1.6rem;
-  margin: 1rem;
   background-image: url("../images/site/checkerboard.jpg");
-  background-size: cover;
+  margin: 0;
 }
-html #wrapper {
-  max-width: 75vw;
+
+img {
+  max-width: 100%;
+}
+
+#wrapper {
   margin: 0 auto;
   background-color: #fff;
   padding: 2rem;
-}
-html img {
-  max-width: 100%;
 }
 
 .header .hero-section .heading-text-container {
@@ -61,6 +63,17 @@ html img {
   text-decoration: none;
 }
 
+.main .hero-section .hero-img-container {
+  background-image: url("../images/vehicles/delorean.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 90%;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  padding: 1rem 0 3rem;
+}
 .main .hero-section .title-text {
   font-size: 3.2rem;
   font-weight: 700;
@@ -68,29 +81,22 @@ html img {
   margin: 0 0.5rem;
   padding: 1rem 0 3rem;
 }
-.main .hero-section .hero-img {
+.main .hero-img {
   display: block;
   margin: auto;
 }
-.main .hero-section .overlay {
-  position: absolute;
-  top: 24rem;
-  left: 1em;
-  background-color: rgba(255, 255, 255, 0.6470588235);
-  padding: 2rem;
+.main .overlay {
+  background-color: rgba(161, 28, 28, 0.6470588235);
   color: #1d4289;
   padding: 1rem;
+  margin: 0;
 }
-.main .hero-section .overlay .heading-text {
+.main .heading-text {
   padding: 0;
   margin: 0;
   font-size: 2.5rem;
 }
-.main .hero-section .overlay .heading-text .own-today-img {
-  margin-top: 2rem;
-  padding-top: 20rem;
-}
-.main .hero-section .overlay .own-today {
+.own-today {
   background-color: #1d4289;
   color: #fff;
   padding: 1rem 2rem;
@@ -98,31 +104,34 @@ html img {
   font-weight: 600;
   margin: 0;
 }
-.main .hero-section .overlay .list {
+
+.list {
   padding: 0;
   margin: 0.2rem;
   list-style: none;
   padding-bottom: 3rem;
   font-size: 1.75rem;
 }
-.main .hero-section .overlay .list .item {
+.list .item {
   padding: 0;
   font-weight: 600;
 }
-.main .review-section {
+
+.review-section {
   padding: 1rem 0;
 }
-.main .upgrades-section {
+
+.upgrades-section {
   display: flex;
   flex-wrap: wrap;
 }
-.main .upgrades-section .img-text {
+.upgrades-section .img-text {
   text-align: center;
 }
-.main .upgrades-section .upgrades-fig {
+.upgrades-section .upgrades-fig {
   flex-basis: 25%;
 }
-.main .upgrades-section .upgrades-fig .img-container {
+.upgrades-section .upgrades-fig .img-container {
   background-color: #1d4289;
   display: flex;
   justify-content: center;
@@ -131,9 +140,9 @@ html img {
 }
 
 @media (min-width: 768px) {
-  .main {
-    max-width: 1000px;
-    margin: 0 20rem;
+  #wrapper {
+    max-width: 1080px;
+    margin: 1rem auto;
   }
   .main .hero-section {
     padding: 0 0 2rem;
@@ -145,10 +154,7 @@ html img {
     font-size: 3rem;
   }
   .main .hero-section .overlay {
-    top: 24rem;
-    left: 20em;
-    background-color: rgba(254, 251, 251, 0.8235294118);
-    margin: 3rem;
+    margin-left: 10rem;
   }
   .main .hero-section .list {
     font-size: 2rem;
