@@ -68,7 +68,7 @@ html img {
   position: absolute;
   top: 24rem;
   left: 1em;
-  background-color: rgba(254, 254, 254, 0.6666666667);
+  background-color: rgba(255, 255, 255, 0.6470588235);
   padding: 2rem;
   color: #1d4289;
   padding: 1rem;
@@ -138,6 +138,8 @@ html img {
   .main .hero-section .overlay {
     top: 24rem;
     left: 20em;
+    background-color: rgba(254, 251, 251, 0.8235294118);
+    margin: 3rem;
   }
   .main .hero-section .list {
     font-size: 2rem;
