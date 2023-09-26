@@ -86,7 +86,7 @@ img {
   margin: auto;
 }
 .main .overlay {
-  background-color: rgba(161, 28, 28, 0.6470588235);
+  background-color: rgba(247, 247, 255, 0.9098039216);
   color: #1d4289;
   padding: 1rem;
   margin: 0;
@@ -139,7 +139,7 @@ img {
   padding: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 750px) {
   #wrapper {
     max-width: 1080px;
     margin: 1rem auto;
