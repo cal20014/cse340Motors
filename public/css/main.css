@@ -12,6 +12,14 @@ html *::after {
 html body {
   font-size: 1.6rem;
   margin: 1rem;
+  background-image: url("../images/site/checkerboard.jpg");
+  background-size: cover;
+}
+html #wrapper {
+  max-width: 75vw;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
 }
 html img {
   max-width: 100%;
@@ -124,6 +132,7 @@ html img {
 
 @media (min-width: 768px) {
   .main {
+    max-width: 1000px;
     margin: 0 20rem;
   }
   .main .hero-section {
