@@ -1,5 +1,5 @@
 -- Insert the Tony Stark record to the account table
-INSERT INTO account (first_name, last_name, email, password)
+INSERT INTO account (account_firstname, account_lastname, account_email, account_password)
 VALUES ('Tony', 'Stark', 'tony@starkent.com', 'Iam1ronM@n');
 
 -- Modify the Tony Stark record to change the account_type to "Admin".
@@ -19,11 +19,11 @@ SET inv_description = REPLACE(inv_description, 'small interiors', 'a huge interi
 WHERE inv_id = 10;
 
 -- Use an inner join to select the make and model fields from the inventory table and the classification name field from the classification table for inventory items that belong to the "Sport" category.
-SELECT inv_id, make, model, classification_id, name
-FROM inventory
-    INNER JOIN classification
-    ON inventory.classification_id = classification.classification_id
-WHERE classification.name = 'Sport';
+SELECT inv_id, inv_make, inv_model, c.classification_id, classification_name
+FROM inventory i
+    INNER JOIN classification c
+    ON i.classification_id = c.classification_id
+WHERE classification_name = 'Sport';
 
 -- Update all records in the inventory table to add "/vehicles" to the middle of the file path in the inv_image and inv_thumbnail columns using a single query.
 UPDATE inventory

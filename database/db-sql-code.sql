@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS public.account
 -- Data for table `classification`
 INSERT INTO public.classification (classification_name)
 VALUES ('Custom'),
-('Sport')
+('Sport'),
 ('SUV'),
 ('Truck'),
 ('Sedan');
@@ -74,6 +74,7 @@ INSERT INTO public.inventory (
     inv_color,
     classification_id
   )
+
 VALUES   (
     'Chevy',
     'Camaro',
@@ -242,3 +243,7 @@ VALUES   (
     5
   );
 
+-- Update all records in the inventory table to add "/vehicles" to the middle of the file path in the inv_image and inv_thumbnail columns using a single query.
+UPDATE inventory
+SET inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/'),
+    inv_thumbnail = REPLACE(inv_thumbnail, '/images/', '/images/vehicles/');
