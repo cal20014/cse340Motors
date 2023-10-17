@@ -6,16 +6,13 @@ const Util = {};
  ************************** */
 Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications();
-  console.log(data);
-  console.log(data.rows);
-  console.table(data.rows);
   let list = '<ul class="nav-list">';
   list +=
     '<li class="list-item"><a href="/" title="Home page" class="link">Home</a></li>';
   data.rows.forEach((row) => {
     list += '<li class="list-item">';
     list +=
-      '<a href="/inv/type/ class="link"' +
+      '<a class="link" href="/inv/type/' +
       row.classification_id +
       '" title="See our inventory of ' +
       row.classification_name +
@@ -80,5 +77,13 @@ Util.buildClassificationGrid = async function (data) {
   }
   return grid;
 };
+
+/* ****************************************
+ * Middleware For Handling Errors
+ * Wrap other function in this for
+ * General Error Handling
+ **************************************** */
+Util.handleErrors = (fn) => (req, res, next) =>
+  Promise.resolve(fn(req, res, next)).catch(next);
 
 module.exports = Util;
