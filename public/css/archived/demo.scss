@@ -1,21 +1,6 @@
-/* ====================================
-   TABLE OF CONTENTS
-======================================
-1. Global Styles
-2. Base Element Styles
-3. Layout & Structure
-4. Header
-5. Navigation
-6. Main Content
-7. Footer (assuming you'll add more to this later)
-8. Reviews & Upgrades
-9. Media Queries
-====================================== */
-
-// 1. Global Styles
+// Global styles
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 $primary-color: #1d4289;
-
 html {
   font-size: 62.5%;
   font-family: "Roboto", sans-serif;
@@ -28,7 +13,7 @@ html {
   box-sizing: inherit;
 }
 
-// 2. Base Element Styles
+// mobile screens view and all normal styles
 body {
   font-size: 1.6rem;
   background-image: url("../images/site/checkerboard.jpg");
@@ -39,16 +24,38 @@ img {
   max-width: 100%;
 }
 
-// 3. Layout & Structure
 #wrapper {
   margin: 0 auto;
   background-color: #fff;
   padding: 2rem;
 }
 
-// 4. Navigation
+.header {
+  .hero-section {
+    .heading-text-container {
+      .siteName {
+        .link {
+          font-size: 4.8rem;
+          font-weight: 700;
+          color: #242332;
+          text-decoration: none;
+        }
+      }
+      display: flex;
+      justify-content: space-between;
+      .title-text {
+        font-size: 3.2rem;
+      }
+      .link {
+        text-decoration: none;
+        color: #242332;
+      }
+    }
+  }
+}
+
 .nav {
-  &-list {
+  .nav-list {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -58,49 +65,18 @@ img {
       list-style: none;
       padding: 1rem;
 
-      .link {
-        &,
-        &:link,
-        &:visited {
-          color: #fff;
-          text-decoration: none;
-        }
-
-        &:hover {
-          color: #ffdf11;
-        }
+      .link .link:link,
+      .link:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+      .link:hover {
+        color: #ffdf11;
       }
     }
   }
 }
 
-// 5. Header Content
-.header {
-  .hero-section {
-    .heading-text-container {
-      display: flex;
-      justify-content: space-between;
-
-      .siteName .link {
-        font-size: 4.8rem;
-        font-weight: 700;
-        color: #242332;
-        text-decoration: none;
-      }
-
-      .title-text {
-        font-size: 3.2rem;
-      }
-
-      .link {
-        text-decoration: none;
-        color: #242332;
-      }
-    }
-  }
-}
-
-// 6. Main Content
 .main {
   .hero-section {
     .hero-img-container {
@@ -114,7 +90,6 @@ img {
       align-items: flex-start;
       padding: 1rem 0 3rem;
     }
-
     .title-text {
       font-size: 3.2rem;
       font-weight: 700;
@@ -122,52 +97,47 @@ img {
       margin: 0 0.5rem;
       padding: 1rem 0 3rem;
     }
-
-    .hero-img {
-      display: block;
-      margin: auto;
-    }
-
-    .overlay {
-      background-color: #f7f7ffe8;
-      color: $primary-color;
-      padding: 1rem;
-      margin: 0;
-    }
-
-    .heading-text {
-      padding: 0;
-      margin: 0;
-      font-size: 2.5rem;
-    }
   }
-
-  .own-today {
-    background-color: $primary-color;
-    color: #fff;
-    padding: 1rem 2rem;
-    font-size: 2rem;
-    font-weight: 600;
+  .hero-img {
+    display: block;
+    margin: auto;
+  }
+  .overlay {
+    background-color: #f7f7ffe8;
+    color: $primary-color;
+    padding: 1rem;
     margin: 0;
   }
 
-  .list {
+  .heading-text {
     padding: 0;
-    margin: 0.2rem;
-    list-style: none;
-    padding-bottom: 3rem;
-    font-size: 1.75rem;
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  .own-today-img {
+  }
+}
+.own-today {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.list {
+  padding: 0;
+  margin: 0.2rem;
+  list-style: none;
+  padding-bottom: 3rem;
+  font-size: 1.75rem;
 
-    .item {
-      padding: 0;
-      font-weight: 600;
-    }
+  .item {
+    padding: 0;
+    font-weight: 600;
   }
 }
 
-// 7. Footer
-
-// 8. Reviews & Upgrades
 .review-section {
   padding: 1rem 0;
 }
@@ -175,14 +145,11 @@ img {
 .upgrades-section {
   display: flex;
   flex-wrap: wrap;
-
   .img-text {
     text-align: center;
   }
-
   .upgrades-fig {
     flex-basis: 25%;
-
     .img-container {
       background-color: $primary-color;
       display: flex;
@@ -193,30 +160,29 @@ img {
   }
 }
 
-// 9. Media Queries
+// Large screens view
 @media (min-width: 750px) {
   #wrapper {
     max-width: 1080px;
     margin: 1rem auto;
   }
-
-  .main .hero-section {
-    padding: 0 0 2rem;
-
-    .hero-img {
-      width: 65%;
-    }
-
-    .heading-text {
-      font-size: 3rem;
-    }
-
-    .overlay {
-      margin-left: 10rem;
-    }
-
-    .list {
-      font-size: 2rem;
+  .main {
+    .hero-section {
+      padding: 0 0 2rem;
+      .hero-img {
+        width: 65%;
+        .hero-img-container {
+        }
+      }
+      .heading-text {
+        font-size: 3rem;
+      }
+      .overlay {
+        margin-left: 10rem;
+      }
+      .list {
+        font-size: 2rem;
+      }
     }
   }
 
