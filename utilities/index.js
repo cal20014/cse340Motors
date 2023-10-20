@@ -78,6 +78,26 @@ Util.buildClassificationGrid = async function (data) {
   return grid;
 };
 
+Util.buildVehicleDetails = async function (data) {
+  let vehicle = data[0];
+  let vehicleDetails;
+  vehicleDetails = `<div class="detail-view">`;
+  vehicleDetails += `<h2>${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}</h2>`;
+  vehicleDetails += `<img src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" />`;
+  vehicleDetails += `<ul>`;
+  vehicleDetails += `<li>Price: $${new Intl.NumberFormat("en-US").format(
+    vehicle.inv_price
+  )}</li>`;
+  vehicleDetails += `<li>Description: ${vehicle.inv_description}</li>`;
+  vehicleDetails += `<li>Color: ${vehicle.inv_color}</li>`;
+  vehicleDetails += `<li>Miles: ${new Intl.NumberFormat("en-US").format(
+    vehicle.inv_miles
+  )}</li>`;
+  vehicleDetails += `</ul>`;
+  vehicleDetails += `</div>`;
+  return vehicleDetails;
+};
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for
