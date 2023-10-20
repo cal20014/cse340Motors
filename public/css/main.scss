@@ -31,19 +31,24 @@ html {
 // 2. Base Element Styles
 body {
   font-size: 1.6rem;
-  background-image: url("../images/site/checkerboard.jpg");
+  // background-image: url("../images/site/checkerboard.jpg");
   margin: 0;
 }
 
 img {
   max-width: 100%;
 }
-
+/* Add a media query for tablet and higher screen sizes */
+@media (min-width: 768px) {
+  body {
+    background-image: url("../images/site/checkerboard.jpg");
+  }
+}
 // 3. Layout & Structure
 #wrapper {
   margin: 0 auto;
   background-color: #fff;
-  padding: 2rem;
+  // padding: 2rem;
 }
 
 // 4. Navigation
@@ -234,5 +239,44 @@ img {
   .upgrades-section {
     grid-column: 1/2;
     grid-row: 1/3;
+  }
+}
+
+// Classification view styles
+.inv-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
+}
+.vehicle-classifiction {
+  border: 1px solid #343434;
+  border-radius: 5px;
+  margin: 2rem;
+  img {
+    width: 100%;
+  }
+
+  .divider-line {
+    height: 5px;
+    background-color: #333;
+    border: none;
+    margin: 2rem 0 0;
+    padding: 0;
+  }
+}
+
+// Details view styles
+
+.detail-view {
+  .details-container {
+    display: flex;
+  }
+  .price {
+    font-weight: 700;
+  }
+
+  .list-item::first-word {
+    font-weight: 700;
+    color: red;
   }
 }
