@@ -33,13 +33,23 @@ app.use(static);
 app.get("/", utilities.handleErrors(baseController.buildHome));
 app.use("/inv", inventoryRoute);
 
+/* ***********************
+ * Middleware
+ *************************/
+app.get(
+  "/trigger-error",
+  utilities.handleErrors((req, res, next) => {
+    throw new Error("Oh no! There was a crash. Maybe try a different route?");
+  })
+);
+
 // File Not Found Route - must be last route in list
-// app.use(async (req, res, next) => {
-//   next({
-//     status: 404,
-//     message: "Sorry, we appear to have lost that page.🤦‍♂️",
-//   });
-// });
+app.use(async (req, res, next) => {
+  next({
+    status: 404,
+    message: "Sorry, we appear to have lost that page.🤦‍♂️",
+  });
+});
 
 /* ***********************
  * Express Error Handler
