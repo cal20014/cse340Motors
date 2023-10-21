@@ -269,4 +269,10 @@ img {
 }
 .detail-view .price {
   font-weight: 700;
+}
+.detail-view .detail-info-list {
+  list-style-type: none;
+}
+.detail-view .bolded {
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */

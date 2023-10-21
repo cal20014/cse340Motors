@@ -7,8 +7,6 @@ const Util = {};
 Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications();
   let list = '<div class="nav">';
-
-  // Replace the existing hamburger menu with the new button
   list += '<button id="menu-toggle" class="menu">';
   list +=
     '<img class="ham-menu icon active" src="/images/site/hamburger.svg" alt="Hamburger Menu icon" width="40" height="40" />';
@@ -28,8 +26,6 @@ Util.getNav = async function (req, res, next) {
 
   list += "</ul>";
   list += "</div>";
-
-  // Update the event listener for the new button
   list += `<script>
     document.addEventListener("DOMContentLoaded", function() {
       const menuToggle = document.querySelector("#menu-toggle");
@@ -97,15 +93,16 @@ Util.buildVehicleDetails = async function (data) {
   vehicleDetails += `</div>`;
   vehicleDetails += `<div class="info-container">`;
   vehicleDetails += `<h3>${vehicle.inv_make} ${vehicle.inv_model} Details</h3>`;
-  vehicleDetails += `<ul>`;
-  vehicleDetails += `<li class="list-item price">Price: $${new Intl.NumberFormat(
+  vehicleDetails += `<ul class="detail-info-list">`;
+  vehicleDetails += `<li class="list-item price"><span class="bolded">Price:</span> $${new Intl.NumberFormat(
     "en-US"
   ).format(vehicle.inv_price)}</li>`;
-  vehicleDetails += `<li class="list-item">Description: ${vehicle.inv_description}</li>`;
-  vehicleDetails += `<li class="list-item">Color: ${vehicle.inv_color}</li>`;
-  vehicleDetails += `<li class="list-item">Miles: ${new Intl.NumberFormat(
+  vehicleDetails += `<li class="list-item"><span class="bolded">Description:</span> ${vehicle.inv_description}</li>`;
+  vehicleDetails += `<li class="list-item"><span class="bolded">Color:</span> ${vehicle.inv_color}</li>`;
+  vehicleDetails += `<li class="list-item"><span class="bolded">Miles:</span> ${new Intl.NumberFormat(
     "en-US"
   ).format(vehicle.inv_miles)}</li>`;
+
   vehicleDetails += `</ul>`;
   vehicleDetails += `</div>`;
   vehicleDetails += `</div>`;
