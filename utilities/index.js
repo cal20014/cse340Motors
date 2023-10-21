@@ -52,16 +52,18 @@ Util.buildClassificationGrid = async function (data) {
   if (data.length > 0) {
     grid = '<ul id="inv-display" class="inv-display">';
     data.forEach((vehicle) => {
-      grid += `<li class="list-item" class="vehicle-classifiction">
+      grid += `<li class="list-item vehicle-classifiction">
         <a href="../../inv/detail/${vehicle.inv_id}" title="View ${
         vehicle.inv_make
       } ${vehicle.inv_model} details">
-          <img src="${vehicle.inv_thumbnail}" alt="Image of ${
+          <div class="image-container">
+            <img src="${vehicle.inv_thumbnail}" alt="Image of ${
         vehicle.inv_make
       } ${vehicle.inv_model} on CSE Motors" />
+          </div>
         </a>
         <div class="namePrice">
-        <hr class="divider-line"/>
+          <hr class="divider-line"/>
           <h2>
             <a href="../../inv/detail/${vehicle.inv_id}" title="View ${
         vehicle.inv_make
@@ -86,13 +88,13 @@ Util.buildVehicleDetails = async function (data) {
   let vehicle = data[0];
   let vehicleDetails;
   vehicleDetails = `<div class="detail-view">`;
-  vehicleDetails += `<h2>${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}</h2>`;
+  vehicleDetails += `<h1>${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}</h1>`;
   vehicleDetails += `<div class="details-container">`;
   vehicleDetails += `<div class="image-container">`;
   vehicleDetails += `<img src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" width="1000"/>`;
   vehicleDetails += `</div>`;
   vehicleDetails += `<div class="info-container">`;
-  vehicleDetails += `<h3>${vehicle.inv_make} ${vehicle.inv_model} Details</h3>`;
+  vehicleDetails += `<h2>${vehicle.inv_make} ${vehicle.inv_model} Details</h2>`;
   vehicleDetails += `<ul class="detail-info-list">`;
   vehicleDetails += `<li class="list-item price"><span class="bolded">Price:</span> $${new Intl.NumberFormat(
     "en-US"

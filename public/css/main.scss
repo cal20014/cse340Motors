@@ -152,6 +152,7 @@ img {
 
 // 5. Header Content
 .header {
+  padding: 0;
   .hero-section {
     .heading-text-container {
       display: flex;
@@ -173,6 +174,9 @@ img {
         color: #242332;
       }
     }
+  }
+  @media (min-width: 750px) {
+    padding: 0 1rem;
   }
 }
 
@@ -316,32 +320,90 @@ img {
 // Classification view styles
 .inv-display {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr; // Single column for mobile
   list-style-type: none;
-}
-.vehicle-classifiction {
-  border: 1px solid #343434;
-  border-radius: 5px;
-  margin: 2rem;
+
+  .divider-line {
+    display: none; // Hidden by default on mobile
+  }
+
+  .image-container {
+    width: 100%; // Ensure the container takes up the full width of its parent.
+    display: flex;
+    align-items: flex-start; // Vertically center
+    justify-content: center; // Horizontally center
+
+    img {
+      width: 100%; // Image will fill the width of its container.
+      height: auto; // Maintain aspect ratio.
+      object-fit: contain; // Ensures image aspect ratio is maintained.
+      object-position: center; // Image will be centered.
+      border-radius: 2px;
+    }
+  }
+
+  .vehicle-classifiction {
+    margin: 0 auto;
+    padding: 0 0 5rem;
+  }
+
   img {
     width: 100%;
   }
 
-  .divider-line {
-    height: 5px;
-    background-color: #333;
-    border: none;
-    margin: 2rem 0 0;
-    padding: 0;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr; // Three columns for desktop
+    .image-container {
+      height: 200px; // Set a fixed height for the container.
+    }
+    .vehicle-classifiction {
+      border: 2px solid #343434;
+      border-radius: 5px;
+      margin: 2rem;
+      text-align: center;
+    }
+    .divider-line {
+      display: block;
+      height: 5px; // Increased height for a thicker look
+      background-color: #333;
+      border: none; // Removing any default borders
+      margin: 0;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); // A subtle shadow for depth
+      border-radius: 1px; // Soft rounded edges
+      padding: 0;
+      align-self: center; // Center the HR in its container
+    }
   }
 }
 
+// .inv-display {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   list-style-type: none;
+// }
+// .vehicle-classifiction {
+//   border: 1px solid #343434;
+//   border-radius: 5px;
+//   margin: 2rem;
+//   img {
+//     width: 100%;
+//   }
+
+//   .divider-line {
+//     height: 5px;
+//     background-color: #333;
+//     border: none;
+//     margin: 2rem 0 0;
+//     padding: 0;
+//   }
+// }
+
 // Details view styles
 
+/* Mobile-first approach: stacked view for mobile */
 .detail-view {
-  .details-container {
-    display: flex;
-  }
+  padding: 10px;
+
   .price {
     font-weight: 700;
   }
@@ -350,7 +412,40 @@ img {
     list-style-type: none;
   }
 
-  .bolded {
-    font-weight: bold;
+  .list-item {
+    padding: 1rem;
+  }
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.info-container {
+  width: 100%;
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+/* Media query for desktop view */
+@media screen and (min-width: 768px) {
+  .details-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5rem;
+  }
+
+  .image-container,
+  .info-container {
+    width: 48%; /* Adjust this value if needed */
   }
 }
