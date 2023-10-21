@@ -79,6 +79,201 @@ img {
   }
 }
 
+/* Navigation Styles (common for both mobile and desktop) */
+
+// 4. Navigation
+
+// Default mobile styles
+.nav {
+  background-color: rgb(15, 15, 15);
+
+  .nav-list {
+    display: none; // Hidden by default on mobile
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+
+    &.active {
+      display: flex; // Displayed when active class is added (i.e., menu clicked)
+    }
+  }
+
+  .menu {
+    display: block; // Hamburger menu visible by default on mobile
+    background: none;
+    border: none;
+    margin-left: auto;
+
+    .icon {
+      display: none; // Icons inside the hamburger menu hidden by default
+      &.active {
+        display: unset; // Display the icon that's active (either hamburger or close)
+      }
+    }
+  }
+
+  .link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    color: #d1d1d1;
+    text-decoration: none;
+    font-weight: 700;
+
+    &.active,
+    &:hover {
+      color: #d1d1d1;
+      transition: color 300ms;
+    }
+  }
+}
+
+// Desktop styles (applied at 744px width and above)
+@media screen and (min-width: 744px) {
+  .nav {
+    .nav-list {
+      display: flex; // Displayed by default on desktop
+      flex-direction: row;
+      max-width: 100rem;
+      margin: auto;
+
+      .link {
+        padding: 1.6rem; // Increased padding for desktop view
+      }
+    }
+
+    .menu {
+      display: none; // Hamburger menu hidden on desktop
+    }
+  }
+}
+
+// .nav {
+//   background-color: rgb(15, 15, 15);
+
+//   .nav-list {
+//     display: none;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+
+//     &.active {
+//       display: flex;
+//     }
+//   }
+
+//   // Existing nav-list styles merged with contents
+//   .nav-list {
+//     list-style: none;
+//     display: none; // Initially hide the navigation for mobile
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: #121118;
+//     margin: 0;
+//     padding: 0;
+
+//     &.active {
+//       display: flex; // Show the navigation when it has the 'active' class
+//     }
+
+//     .list-item {
+//       padding: 1rem;
+//       text-align: center; // Center align items in the list
+
+//       .link {
+//         display: block;
+//         width: 100%;
+//         color: #d1d1d1;
+//         text-decoration: none;
+//         font-weight: 700;
+
+//         &.active,
+//         &:hover {
+//           color: #d1d1d1;
+//           transition: color 300ms;
+//         }
+//       }
+//     }
+//   }
+
+//   .menu {
+//     display: block; // Initially show the hamburger menu for all screen sizes
+//     background: none;
+//     border: none;
+//     margin-left: auto;
+
+//     .icon {
+//       display: none;
+
+//       &.active {
+//         display: unset;
+//       }
+//     }
+//   }
+// }
+
+// /* Hide the hamburger menu for desktop screens */
+// @media (min-width: 700px) {
+//   .menu {
+//     display: none; // This line hides the menu on desktop views.
+//   }
+
+//   .nav-list {
+//     display: flex; // Display the nav list as flex on desktop views
+//     flex-direction: row; // Make it horizontal for desktop
+//   }
+// }
+
+// ... (rest of your existing styles)
+
+// .nav {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   background-color: #121118;
+// }
+
+// .nav-list {
+//   list-style: none;
+//   display: flex;
+//   align-items: center;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .list-item {
+//   padding: 1rem;
+// }
+
+// .link {
+//   color: #fff;
+//   text-decoration: none;
+// }
+
+// /* Hamburger Menu Styles (for mobile only) */
+// /* Initially hide the hamburger menu for all screen sizes */
+// .menu {
+//   display: none;
+// }
+
+// /* Show the hamburger menu for mobile screens */
+// @media (max-width: 767px) {
+//   .menu {
+//     display: block;
+//     background-color: transparent;
+//   }
+
+//   .nav-list {
+//     display: none;
+//   }
+
+//   .nav-list.active {
+//     display: flex;
+//   }
+// }
+
 // 5. Header Content
 .header {
   .hero-section {
@@ -273,10 +468,5 @@ img {
   }
   .price {
     font-weight: 700;
-  }
-
-  .list-item::first-word {
-    font-weight: 700;
-    color: red;
   }
 }
