@@ -85,7 +85,7 @@ Util.buildClassificationGrid = async function (data) {
 };
 
 Util.buildVehicleDetails = async function (data) {
-  let vehicle = data[0];
+  let vehicle = data;
   let vehicleDetails;
   vehicleDetails = `<div class="detail-view">`;
   vehicleDetails += `<h1>${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}</h1>`;
