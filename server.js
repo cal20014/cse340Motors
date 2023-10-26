@@ -11,7 +11,9 @@ const env = require("dotenv").config();
 const app = express();
 const static = require("./routes/static");
 const inventoryRoute = require("./routes/inventoryRoute");
+const testRoute = require("./routes/testRoute");
 const baseController = require("./controllers/baseController");
+const testController = require("./controllers/testController");
 const utilities = require("./utilities/");
 
 /* ***********************
@@ -19,7 +21,7 @@ const utilities = require("./utilities/");
  *************************/
 app.set("view engine", "ejs");
 app.use(expressLayouts);
-app.set("layout", "./layouts/layout"); // not at views root
+app.set("layout", "./layouts/layout");
 
 /* ***********************
  * Routes
@@ -27,24 +29,12 @@ app.set("layout", "./layouts/layout"); // not at views root
 app.use(static);
 app.get("/", utilities.handleErrors(baseController.buildHome));
 app.use("/inv", inventoryRoute);
+app.use("/trigger-error", testRoute);
+// app.get("/trigger-error", testController.triggerError);
 
 /* ***********************
  * Middleware
  *************************/
-// app.get(
-//   "/trigger-error",
-//   utilities.handleErrors((req, res, next) => {
-//     throw new Error("Oh no! There was a crash. Maybe try a different route?");
-//   })
-// );
-
-app.get("/trigger-error", (req, res, next) => {
-  next({
-    status: 500, // 500 for internal server error
-    message:
-      "Oh no! The Junior Dev broke the system. Come back later when we have it fixed.",
-  });
-});
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
@@ -60,31 +50,15 @@ app.use(async (req, res, next) => {
  * Place after all other middleware
  *************************/
 app.use(async (err, req, res, next) => {
-  const defaultErrorTitle = " Server Error";
-  const defaultErrorMessage =
-    "Oh no! There was a crash. Maybe try a different route?";
-
-  let errorTitle = defaultErrorTitle;
-  let message = defaultErrorMessage;
-
   let nav = await utilities.getNav();
-
   console.error(`Error at: "${req.originalUrl}": ${err.message}`);
-
-  switch (err.status) {
-    case 404:
-      message = err.message;
-      errorTitle = " Page Not Found";
-      break;
-    case 500:
-      message = err.message;
-      break;
-    default:
-      err.status = 500; // default to internal server error if status is not set
+  if (err.status == 404) {
+    message = err.message;
+  } else {
+    message = "Oh no! There was a crash. Maybe try a different route?";
   }
-
-  res.status(err.status).render("errors/error", {
-    title: err.status + errorTitle,
+  res.render("errors/error", {
+    title: err.status || "Server Error",
     message,
     nav,
   });
