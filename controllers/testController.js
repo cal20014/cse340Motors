@@ -9,9 +9,7 @@ const testController = {};
 // };
 
 testController.triggerError = function (req, res, next) {
-  throw new Error(
-    "Oh no! The Junior Dev broke the system. Come back later when we have it fixed."
-  );
+  throw new Error();
 };
 
 module.exports = testController;
