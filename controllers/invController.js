@@ -27,9 +27,10 @@ invCont.displayVehicleDetail = async function (req, res, next) {
   const data = await invModel.getVehicleDetailsById(vehicle_id);
   const vehicleDetails = await utilities.buildVehicleDetails(data);
   let nav = await utilities.getNav();
-  const vehicleName = data.inv_make;
+  const vehicleMake = data.inv_make;
+  const vehicleModel = data.inv_model;
   res.render("./inventory/detail", {
-    title: vehicleName + " details",
+    title: vehicleMake + vehicleModel + " details",
     nav,
     vehicleDetails,
   });
