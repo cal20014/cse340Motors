@@ -30,7 +30,7 @@ invCont.displayVehicleDetail = async function (req, res, next) {
   const vehicleMake = data.inv_make;
   const vehicleModel = data.inv_model;
   res.render("./inventory/detail", {
-    title: vehicleMake + vehicleModel + " details",
+    title: vehicleMake + " " + vehicleModel + " details",
     nav,
     vehicleDetails,
   });
