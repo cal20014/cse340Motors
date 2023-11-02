@@ -387,6 +387,7 @@ img {
   padding: 0.3rem;
   margin: 0 0 1rem;
   color: #fff;
+  text-align: center;
 }
 .login-content-wrapper .login-form .submit-btn {
   max-width: 50px;
@@ -432,6 +433,7 @@ img {
   margin: 0 0 1rem;
   color: #fff;
   display: block;
+  text-align: center;
 }
 .register-content-wrapper .register-form .submit-btn {
   max-width: 75px;
