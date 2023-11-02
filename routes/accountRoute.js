@@ -11,9 +11,6 @@ const utilities = require("../utilities");
 /* ***********************
  * Deliver Login View
  *************************/
-router.get(
-  "/login",
-  utilities.handleErrors(accountControllerController.buildLogin)
-);
+router.get("/login", utilities.handleErrors(accountController.buildLogin));
 
 module.exports = router;
