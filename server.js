@@ -51,11 +51,16 @@ app.set("layout", "./layouts/layout");
 /* ***********************
  * Routes
  *************************/
+// Static Routes
 app.use(static);
+// Index Route
 app.get("/", utilities.handleErrors(baseController.buildHome));
+// Inventory Routes
 app.use("/inv", inventoryRoute);
+// Test Route
 app.use("/trigger-error", testRoute);
-// app.get("/trigger-error", testController.triggerError);
+// Account Routes
+app.use("/account", require("./routes/accountRoute"));
 
 /* ***********************
  * Middleware
