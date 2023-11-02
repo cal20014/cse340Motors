@@ -4,12 +4,30 @@
 
 <!-- messages -->
 <%- messages() %>
-<div class="login-content-wrapper">
-  <div class="login-form-wrapper">
-    <!-- The Login Form Content -->
-    <form class="login-form" method="post">
+<div class="register-content-wrapper">
+  <div class="register-form-wrapper">
+    <!-- The register Form Content -->
+    <form class="register-form" method="post">
       <legend>*ALL FIELDS ARE REQUIRED</legend>
       <fieldset class="form-wrapper">
+        <div class="account_firstname-wrapper">
+          <label class="input" for="account_firstname">First Name:</label>
+          <input
+            class="input"
+            type="text"
+            id="account_firstname"
+            name="account_firstname"
+            required
+          />
+        <div class="account_lastname-wrapper">
+          <label class="input" for="account_lastname">Last Name:</label>
+          <input
+            class="input"
+            type="email"
+            id="account_lastname"
+            name="account_lastname"
+            required
+          />
         <div class="email-wrapper">
           <label class="input" for="account_email">Email:</label>
           <input
@@ -37,7 +55,7 @@
         <button class="show-password-btn" id="show-password-btn">
           Show Password
         </button>
-        <button class="submit-btn" type="submit">Login</button>
+        <button class="submit-btn" type="submit">register</button>
       </fieldset>
     </form>
     <span class="sign-up-wrapper"

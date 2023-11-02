@@ -500,3 +500,56 @@ img {
     padding: 1.5rem;
   }
 }
+
+// Register view styles
+
+.register-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .register-form-wrapper {
+    background-color: #059acf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 3px;
+    padding: 1rem;
+  }
+
+  .register-form {
+    .form-wrapper {
+      display: flex;
+      flex-direction: column;
+      border-radius: 3px;
+      padding: 1rem;
+    }
+
+    .input {
+      display: block;
+    }
+
+    .password-info {
+      text-wrap: wrap;
+    }
+
+    .show-password-btn {
+      border-radius: 10px;
+      max-width: 150px;
+      background-color: #30363d;
+      padding: 0.3rem;
+      margin: 0 0 1rem;
+      color: #fff;
+      display: block;
+    }
+
+    .submit-btn {
+      max-width: 75px;
+      display: block;
+    }
+  }
+  .sign-up-wrapper {
+    padding: 1.5rem;
+  }
+}

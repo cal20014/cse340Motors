@@ -390,4 +390,47 @@ img {
 }
 .login-content-wrapper .sign-up-wrapper {
   padding: 1.5rem;
+}
+
+.register-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-content-wrapper .register-form-wrapper {
+  background-color: #059acf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 3px;
+  padding: 1rem;
+}
+.register-content-wrapper .register-form .form-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  padding: 1rem;
+}
+.register-content-wrapper .register-form .input {
+  display: block;
+}
+.register-content-wrapper .register-form .password-info {
+  text-wrap: wrap;
+}
+.register-content-wrapper .register-form .show-password-btn {
+  border-radius: 10px;
+  max-width: 150px;
+  background-color: #30363d;
+  padding: 0.3rem;
+  margin: 0 0 1rem;
+  color: #fff;
+  display: block;
+}
+.register-content-wrapper .register-form .submit-btn {
+  max-width: 75px;
+  display: block;
+}
+.register-content-wrapper .sign-up-wrapper {
+  padding: 1.5rem;
 }/*# sourceMappingURL=main.css.map */
