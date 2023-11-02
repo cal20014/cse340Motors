@@ -441,4 +441,13 @@ img {
 }
 .register-content-wrapper .sign-up-wrapper {
   padding: 1.5rem;
+}
+
+input:required:invalid,
+input:focus:invalid {
+  border: 1px solid red;
+}
+
+input:required:valid {
+  border: 1px solid green;
 }/*# sourceMappingURL=main.css.map */

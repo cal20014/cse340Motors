@@ -21,4 +21,12 @@ router.get(
   utilities.handleErrors(accountController.buildRegister)
 );
 
+/* ***********************
+ * Add New Account Message
+ *************************/
+router.post(
+  "/register",
+  utilities.handleErrors(accountController.registerAccount)
+);
+
 module.exports = router;

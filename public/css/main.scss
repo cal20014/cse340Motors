@@ -563,3 +563,12 @@ img {
     padding: 1.5rem;
   }
 }
+
+input:required:invalid,
+input:focus:invalid {
+  border: 1px solid red;
+}
+
+input:required:valid {
+  border: 1px solid green;
+}

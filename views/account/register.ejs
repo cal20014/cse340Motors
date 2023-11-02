@@ -4,10 +4,10 @@
 
 <!-- messages -->
 <%- messages() %>
-<div class="register-content-wrapper">
-  <div class="register-form-wrapper">
+<div class="register-content-wrapper" >
+  <div class="register-form-wrapper" id="registerFormContainer">
     <!-- The register Form Content -->
-    <form class="register-form" method="post">
+    <form class="register-form" id="registerForm" action="/account/register" method="post">
       <legend class="required-message">*ALL FIELDS ARE REQUIRED</legend>
       <fieldset class="form-wrapper">
         <div class="account_firstname-wrapper">
@@ -17,15 +17,17 @@
             type="text"
             id="account_firstname"
             name="account_firstname"
+            placeholder="John"
             required
           />
         <div class="account_lastname-wrapper">
           <label class="input" for="account_lastname">Last Name:</label>
           <input
             class="input"
-            type="email"
+            type="text"
             id="account_lastname"
             name="account_lastname"
+            placeholder="Smith"
             required
           />
         <div class="email-wrapper">
@@ -35,6 +37,7 @@
             type="email"
             id="account_email"
             name="account_email"
+            placeholder="example@email.com"
             required
           />
         </div>
@@ -42,9 +45,11 @@
           <label class="input" for="account_password">Password:</label>
           <input
             class="input"
-            type="email"
+            type="password"
             id="account_password"
             name="account_password"
+            placeholder="************"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"
             required
           />
           <p class="password-info">
@@ -63,3 +68,5 @@
     >
   </div>
 </div>
+
+<!-- <script src="/js/showPassword.js"></script> -->
