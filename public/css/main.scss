@@ -449,3 +449,54 @@ img {
     width: 48%; /* Adjust this value if needed */
   }
 }
+
+// Login view styles
+
+.login-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-form-wrapper {
+    background-color: #059acf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 3px;
+    padding: 1rem;
+  }
+
+  .login-form {
+    .form-wrapper {
+      display: flex;
+      flex-direction: column;
+      border-radius: 3px;
+      padding: 1rem;
+    }
+
+    .input {
+      display: block;
+    }
+
+    .password-info {
+      text-wrap: wrap;
+    }
+
+    .show-password-btn {
+      border-radius: 10px;
+      max-width: 150px;
+      background-color: #30363d;
+      padding: 0.3rem;
+      margin: 0 0 1rem;
+      color: #fff;
+    }
+
+    .submit-btn {
+      max-width: 50px;
+    }
+  }
+  .sign-up-wrapper {
+    padding: 1.5rem;
+  }
+}
