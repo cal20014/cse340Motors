@@ -356,6 +356,9 @@ img {
   justify-content: center;
   align-items: center;
 }
+.login-content-wrapper .required-message {
+  font-size: 1rem;
+}
 .login-content-wrapper .login-form-wrapper {
   background-color: #059acf;
   display: flex;
@@ -396,6 +399,9 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.register-content-wrapper .required-message {
+  font-size: 1rem;
 }
 .register-content-wrapper .register-form-wrapper {
   background-color: #059acf;
