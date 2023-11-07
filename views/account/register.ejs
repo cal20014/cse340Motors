@@ -4,6 +4,14 @@
 
 <!-- messages -->
 <%- messages() %>
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
 <div class="register-content-wrapper" >
   <div class="register-form-wrapper" id="registerFormContainer">
     <!-- The register Form Content -->
@@ -19,6 +27,7 @@
             name="account_firstname"
             placeholder="John"
             required
+            value="<%= locals.account_firstname %>"
           />
         <div class="account_lastname-wrapper">
           <label class="input" for="account_lastname">Last Name:</label>
@@ -29,6 +38,7 @@
             name="account_lastname"
             placeholder="Smith"
             required
+            value="<%= locals.account_lastname %>"
           />
         <div class="email-wrapper">
           <label class="input" for="account_email">Email:</label>
@@ -39,6 +49,7 @@
             name="account_email"
             placeholder="example@email.com"
             required
+            value="<%= locals.account_email %>"
           />
         </div>
         <div class="password-wrapper">
