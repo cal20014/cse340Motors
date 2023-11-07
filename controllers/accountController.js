@@ -3,6 +3,7 @@
  *************************/
 const utilities = require("../utilities/");
 const accountModel = require("../models/account-model");
+const bcrypt = require("bcryptjs");
 
 /* ***********************
  * Deliver Login View
@@ -39,11 +40,25 @@ async function registerAccount(req, res) {
     account_password,
   } = req.body;
 
+  // Hash the password before storing in database
+  let hashedPassword;
+  try {
+    // regular password and cost (salt is generated automatically)
+    hashedPassword = await bcrypt.hashSync(account_password, 10);
+  } catch (error) {
+    req.flash("notice", "Sorry, there was an error registering your account.");
+    res.status(500).render("account/register", {
+      title: "Registration",
+      nav,
+      errors: null,
+    });
+  }
+
   const regResult = await accountModel.registerAccount(
     account_firstname,
     account_lastname,
     account_email,
-    account_password
+    hashedPassword
   );
 
   if (regResult) {
