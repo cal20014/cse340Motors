@@ -115,7 +115,7 @@ Util.buildVehicleDetails = async function (data) {
 Util.buildInventoryManagement = async function (data) {
   let view = `
   <div class="inv-management">
-    <a class="link" href="inv/add-classification">Add new classification</a>
+    <a class="link" href="add-classification">Add new classification</a>
     <a class="link" href="add-inventory">Add new inventory</a>
   </div>
   `;

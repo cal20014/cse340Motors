@@ -18,4 +18,14 @@ router.get(
 
 router.get("/", utilities.handleErrors(invController.buildInventoryManagement));
 
+router.get(
+  "add-classification/",
+  utilities.handleErrors(invController.buildAddClassification)
+);
+
+router.get(
+  "add-inventory/",
+  utilities.handleErrors(invController.buildAddInventoryItem)
+);
+
 module.exports = router;
