@@ -16,4 +16,15 @@
 <% } %>
 
 <!-- Management view -->
-<%- addClassificationView %>
+<%#- addClassificationView %>
+
+<form method="POST">
+  <label for="classification_name">Classification Name:</label>
+  <input
+    type="text"
+    name="classification_name"
+    id="classification_name"
+    required
+  />
+  <button type="submit">Add Classification</button>
+</form>

@@ -19,12 +19,12 @@ router.get(
 router.get("/", utilities.handleErrors(invController.buildInventoryManagement));
 
 router.get(
-  "add-classification/",
+  "/add-classification/",
   utilities.handleErrors(invController.buildAddClassification)
 );
 
 router.get(
-  "add-inventory/",
+  "/add-inventory/",
   utilities.handleErrors(invController.buildAddInventoryItem)
 );
 

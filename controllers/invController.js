@@ -52,22 +52,20 @@ invCont.buildInventoryManagement = async function (req, res, next) {
 
 invCont.buildAddClassification = async function (req, res, next) {
   const nav = await utilities.getNav();
-  const addClassificationView = await utilities.buildAddClassification();
   res.render("./inventory/addClassification", {
     title: "Add Classification",
     nav,
-    addClassificationView,
     errors: null,
   });
 };
 
 invCont.buildAddInventoryItem = async function (req, res, next) {
   const nav = await utilities.getNav();
-  const addInventoryView = await utilities.buildAddInventoryItem();
+  const classificationList = await utilities.buildClassificationList();
   res.render("./inventory/addInventory", {
     title: "Add Inventory Item",
     nav,
-    addInventoryView,
+    classificationList,
     errors: null,
   });
 };
