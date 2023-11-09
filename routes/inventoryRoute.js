@@ -16,4 +16,6 @@ router.get(
   utilities.handleErrors(invController.displayVehicleDetail)
 );
 
+router.get("/", utilities.handleErrors(invController.buildInventoryManagement));
+
 module.exports = router;

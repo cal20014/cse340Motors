@@ -572,3 +572,16 @@ input:focus:invalid {
 input:required:valid {
   border: 1px solid green;
 }
+
+// Management view styles
+
+.inv-management {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 2rem;
+
+  .link {
+    color: #242332;
+    padding: 0.5rem;
+  }
+}

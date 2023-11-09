@@ -450,4 +450,14 @@ input:focus:invalid {
 
 input:required:valid {
   border: 1px solid green;
+}
+
+.inv-management {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 2rem;
+}
+.inv-management .link {
+  color: #242332;
+  padding: 0.5rem;
 }/*# sourceMappingURL=main.css.map */
