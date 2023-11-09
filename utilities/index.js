@@ -122,6 +122,57 @@ Util.buildInventoryManagement = async function (data) {
   return view;
 };
 
+Util.buildAddClassification = async function (data) {
+  let view = `
+    <form method="POST">
+      <label for="classification_name">Classification Name:</label>
+      <input type="text" name="classification_name" id="classification_name" required />
+      <button type="submit">Add Classification</button>
+    </form>
+  `;
+  return view;
+};
+
+Util.buildAddInventoryItem = async function (data) {
+  let view = `
+    <form method="POST">
+    <label for="classification_name">Classification Name:</label>
+    <input type="dropdown" name="classification_name" id="classification_name" required />
+
+    <label for="inv_make">Make: </label>
+    <input type="text" name="inv_make" id="inv_make" required />
+
+    <label for="inv_model">model: </label>
+    <input type="text" name="inv_model" id="inv_model" required />
+
+    <label for="inv_year">Year: </label>
+    <input type="text" name="inv_year" id="inv_year" required />
+
+    <label for="inv_description">Description: </label>
+    <input type="text" name="inv_description" id="inv_description" required />
+
+    <label for="inv_image">Image: </label>
+    <input type="text" name="inv_image" id="inv_image" required />
+
+    <label for="inv_thumbnail">Thumbnail: </label>
+    <input type="text" name="inv_thumbnail" id="inv_thumbnail" required />
+
+    <label for="inv_price">Price: </label>
+    <input type="text" name="inv_price" id="inv_price" required />
+
+    <label for="inv_miles">Miles: </label>
+    <input type="text" name="inv_miles" id="inv_miles" required />
+
+    <label for="inv_color">Color: </label>
+    <input type="text" name="inv_color" id="inv_color" required />
+
+    <button type="submit">Add Classification</button>
+    
+    </form>
+        
+  `;
+};
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for
