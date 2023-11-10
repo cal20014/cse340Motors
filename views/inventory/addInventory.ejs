@@ -25,39 +25,101 @@
 
       <%- classificationList %>
 
-      <label for="inv_make">Make: </label>
-      <input type="text" name="inv_make" id="inv_make" required />
-
-      <label for="inv_model">model: </label>
-      <input type="text" name="inv_model" id="inv_model" required />
-
-      <label for="inv_year">Year: </label>
-      <input type="text" name="inv_year" id="inv_year" required />
-
-      <label for="inv_description">Description: </label>
-      <textarea
+      <label for="inv_make">Make:</label>
+      <input
         type="text"
+        name="inv_make"
+        id="inv_make"
+        required
+        pattern="[A-Za-z0-9 ]{1,}"
+        title="Make can only contain letters, numbers, and spaces."
+        placeholder="Ford"
+      />
+
+      <label for="inv_model">Model:</label>
+      <input
+        type="text"
+        name="inv_model"
+        id="inv_model"
+        required
+        pattern="[A-Za-z0-9 ]{1,}"
+        title="Model can only contain letters, numbers, and spaces."
+        placeholder="Mustang"
+      />
+
+      <label for="inv_year">Year:</label>
+      <input
+        type="text"
+        name="inv_year"
+        id="inv_year"
+        required
+        pattern="\d{4}"
+        title="Please enter a valid year."
+        placeholder="2023"
+      />
+
+      <label for="inv_description">Description:</label>
+      <textarea
         name="inv_description"
         id="inv_description"
         required
+        placeholder="A detailed description of the item"
       ></textarea>
 
-      <label for="inv_image">Image: </label>
-      <input type="text" name="inv_image" id="inv_image" required />
+      <label for="inv_image">Image:</label>
+      <input
+        type="url"
+        name="inv_image"
+        id="inv_image"
+        required
+        title="Please enter a valid URL for the image."
+        placeholder="http://example.com/image.jpg"
+      />
 
-      <label for="inv_thumbnail">Thumbnail: </label>
-      <input type="text" name="inv_thumbnail" id="inv_thumbnail" required />
+      <label for="inv_thumbnail">Thumbnail:</label>
+      <input
+        type="url"
+        name="inv_thumbnail"
+        id="inv_thumbnail"
+        required
+        title="Please enter a valid URL for the thumbnail."
+        placeholder="http://example.com/thumbnail.jpg"
+      />
 
-      <label for="inv_price">Price: </label>
-      <input type="text" name="inv_price" id="inv_price" required />
+      <label for="inv_price">Price:</label>
+      <input
+        type="text"
+        name="inv_price"
+        id="inv_price"
+        required
+        pattern="\d+(\.\d{2})?"
+        title="Please enter a valid price."
+        placeholder="19999.99"
+      />
 
-      <label for="inv_miles">Miles: </label>
-      <input type="text" name="inv_miles" id="inv_miles" required />
+      <label for="inv_miles">Miles:</label>
+      <input
+        type="text"
+        name="inv_miles"
+        id="inv_miles"
+        required
+        pattern="\d+"
+        title="Miles should only contain numbers."
+        placeholder="120000"
+      />
 
-      <label for="inv_color">Color: </label>
-      <input type="text" name="inv_color" id="inv_color" required />
+      <label for="inv_color">Color:</label>
+      <input
+        type="text"
+        name="inv_color"
+        id="inv_color"
+        required
+        pattern="[A-Za-z ]{1,}"
+        title="Color can only contain letters and spaces."
+        placeholder="Red"
+      />
 
-      <button type="submit">Add Classification</button>
+      <button type="submit">Add Inventory Item</button>
     </fieldset>
   </form>
 </div>
