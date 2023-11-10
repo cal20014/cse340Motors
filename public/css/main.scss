@@ -585,3 +585,18 @@ input:required:valid {
     padding: 0.5rem;
   }
 }
+
+// Add inventory view styles
+
+.add-inventory-form-container {
+  display: flex;
+  justify-content: center;
+
+  .add-inventory-form {
+  }
+
+  .fieldset {
+    display: flex;
+    flex-direction: column;
+  }
+}

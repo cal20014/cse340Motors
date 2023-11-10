@@ -460,4 +460,13 @@ input:required:valid {
 .inv-management .link {
   color: #242332;
   padding: 0.5rem;
+}
+
+.add-inventory-form-container {
+  display: flex;
+  justify-content: center;
+}
+.add-inventory-form-container .fieldset {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=main.css.map */
