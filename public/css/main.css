@@ -470,53 +470,47 @@ input:required:valid {
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Styles for the form itself */
+  /* Style for form labels */
+  /* Style for form inputs */
+  /* Style for the submit button */
+  /* Responsive adjustments */
 }
-
-/* Styles for the form itself */
-.add-inventory-form {
+.add-inventory-form-container .add-inventory-form {
   display: flex;
   flex-direction: column;
 }
-
-.fieldset {
+.add-inventory-form-container .fieldset {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
 }
-
-legend {
+.add-inventory-form-container legend {
   padding: 0 10px;
   width: auto;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: #333;
 }
-
-/* Style for form labels */
-.add-inventory-form label {
+.add-inventory-form-container .add-inventory-form label {
   margin-top: 10px;
   margin-bottom: 5px;
   display: block;
   font-weight: bold;
   color: #555;
 }
-
-/* Style for form inputs */
-.add-inventory-form input[type=text],
-.add-inventory-form textarea {
+.add-inventory-form-container .add-inventory-form input[type=text],
+.add-inventory-form-container .add-inventory-form textarea {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
-.add-inventory-form textarea {
+.add-inventory-form-container .add-inventory-form textarea {
   height: 100px;
   resize: vertical;
 }
-
-/* Style for the submit button */
-.add-inventory-form button {
+.add-inventory-form-container .add-inventory-form button {
   padding: 10px 20px;
   color: white;
   background-color: #5cb85c;
@@ -525,17 +519,63 @@ legend {
   cursor: pointer;
   margin-top: 10px;
 }
-
-.add-inventory-form button:hover {
+.add-inventory-form-container .add-inventory-form button:hover {
   background-color: #4cae4c;
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
-  .add-inventory-form-container {
+  .add-inventory-form-container .add-inventory-form-container {
     padding: 10px;
   }
-  .fieldset {
+  .add-inventory-form-container .fieldset {
     padding: 10px;
   }
+}
+
+.add-classification-form-container {
+  display: flex;
+  justify-content: center;
+}
+.add-classification-form-container .add-classification-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.add-classification-form-container .legend {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.add-classification-form-container .label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+.add-classification-form-container .input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.add-classification-form-container .input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.add-classification-form-container .classification-btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+.add-classification-form-container .classification-btn:hover {
+  background-color: #0062cc;
+}
+.add-classification-form-container .classification-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }/*# sourceMappingURL=main.css.map */

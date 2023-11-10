@@ -17,18 +17,23 @@
 
 <!-- Management view -->
 <%#- addClassificationView %>
-<div>
-  <form method="POST">
-    <fieldset>
-      <legend>Add Classification</legend>
-      <label for="classification_name">Classification Name:</label>
+<div class="add-classification-form-container">
+  <form class="add-classification-form" method="POST">
+    <fieldset class="fieldset">
+      <legend class="legend">Add Classification</legend>
+      <label class="label" for="classification_name"
+        >Classification Name:</label
+      >
       <input
+        class="input"
         type="text"
         name="classification_name"
         id="classification_name"
         required
       />
-      <button type="submit">Add Classification</button>
+      <button class="classification-btn" type="submit">
+        Add Classification
+      </button>
     </fieldset>
   </form>
 </div>
