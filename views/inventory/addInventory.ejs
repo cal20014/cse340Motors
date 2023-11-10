@@ -68,21 +68,23 @@
 
       <label for="inv_image">Image:</label>
       <input
-        type="url"
+        type="text"
         name="inv_image"
         id="inv_image"
         required
-        title="Please enter a valid URL for the image."
+        pattern=".*\.(png|jpg|jpeg|webp)$"
+        title="Image must end with .png, .jpg, .jpeg, or .webp"
         placeholder="http://example.com/image.jpg"
       />
 
       <label for="inv_thumbnail">Thumbnail:</label>
       <input
-        type="url"
+        type="text"
         name="inv_thumbnail"
         id="inv_thumbnail"
         required
-        title="Please enter a valid URL for the thumbnail."
+        pattern=".*\.(png|jpg|jpeg|webp)$"
+        title="Thumbnail must end with .png, .jpg, .jpeg, or .webp"
         placeholder="http://example.com/thumbnail.jpg"
       />
 
