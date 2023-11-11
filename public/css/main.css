@@ -539,6 +539,26 @@ input:required:valid {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  border: 1px solid #000000;
+  padding: 1rem;
+  background-color: #0794c7;
+}
+.add-classification-form-container .add-classification-form .label {
+  font-size: 2rem;
+  color: #000;
+}
+.add-classification-form-container .add-classification-form .input {
+  max-width: 200px;
+  margin: 0 0 1.5rem;
+}
+.add-classification-form-container .add-classification-form .classification-btn {
+  max-width: 105px;
+  font-weight: bold;
+}
+.add-classification-form-container .fieldset {
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
 }
 .add-classification-form-container .legend {
   font-size: 1.5rem;

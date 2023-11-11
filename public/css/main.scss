@@ -684,15 +684,35 @@ input:required:valid {
 .add-classification-form-container {
   display: flex;
   justify-content: center;
+
   .add-classification-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    border: 1px solid #000000;
+    padding: 1rem;
+    background-color: #0794c7;
+
+    .label {
+      font-size: 2rem;
+      color: #000;
+    }
+
+    .input {
+      max-width: 200px;
+      margin: 0 0 1.5rem;
+    }
+
+    .classification-btn {
+      max-width: 105px;
+      font-weight: bold;
+    }
   }
 
   .fieldset {
-    // border: none;
-    // padding: 0;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
   }
 
   .legend {
