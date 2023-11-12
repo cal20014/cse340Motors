@@ -38,7 +38,7 @@ function validateAddInventoryItemForm() {
   const invClassification_id = document.querySelector(".classification_id");
 
   //   Regex patterns for validation
-  const textPattern = /^[A-Za-z0-9 ]+$/;
+  const textPattern = /^[A-Za-z0-9 ]{3,}$/;
   const yearPattern = /^\d{4}$/;
   const imagePattern = /\.(png|jpg|jpeg|webp)$/;
   const pricePattern = /^\d+(\.\d{2})?$/;
@@ -49,12 +49,12 @@ function validateAddInventoryItemForm() {
     !validateField(
       invMake,
       textPattern,
-      "Make can only contain letters, numbers, and spaces."
+      "Make must be at least 3 characters long and can only contain letters, numbers, and spaces."
     ) ||
     !validateField(
       invModel,
       textPattern,
-      "Model can only contain letters, numbers, and spaces."
+      "Model must be at least 3 characters long and can only contain letters, numbers, and spaces."
     ) ||
     !validateField(invYear, yearPattern, "Year must be four digits.") ||
     !validateField(

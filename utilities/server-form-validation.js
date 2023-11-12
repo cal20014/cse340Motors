@@ -28,13 +28,13 @@ validate.addInventoryItemRules = () => {
   return [
     body("inv_make")
       .trim()
-      .isLength({ min: 1 })
+      .isLength({ min: 3 })
       .withMessage("Make is required")
       .matches(/[A-Za-z0-9 ]+/i) // regex to allow letters, numbers, and spaces
       .withMessage("Make can only contain letters, numbers and spaces."),
     body("inv_model")
       .trim()
-      .isLength({ min: 1 })
+      .isLength({ min: 3 })
       .withMessage("Model is required")
       .matches(/[A-Za-z0-9 ]+/i) // regex to allow letters, numbers, and spaces
       .withMessage("Model can only contain letters, numbers and spaces."),
