@@ -572,11 +572,11 @@ img {
 
 input:required:invalid,
 input:focus:invalid {
-  border: 1px solid red;
+  border: 2px dotted red;
 }
 
 input:required:valid {
-  border: 1px solid green;
+  border: 3px solid rgb(3, 189, 3);
 }
 
 // Management view styles
