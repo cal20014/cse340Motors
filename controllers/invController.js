@@ -2,6 +2,42 @@ const invModel = require("../models/inventory-model");
 const utilities = require("../utilities/");
 
 const invCont = {};
+/* ***************************
+ *  Add New Classification to the Database
+ *  This function handles the POST request for adding a new classification.
+ *  It extracts the classification name from the request body,
+ *  invokes the model function to insert it into the database,
+ *  and then redirects to the inventory management page.
+ * ************************** */
+
+invCont.addNewClassification = async function (req, res, next) {
+  try {
+    const { classification_name } = req.body;
+    await invModel.insertNewClassification(classification_name);
+    res.redirect("/inventory-management");
+  } catch (error) {
+    console.error("Error adding new classification:", error);
+  }
+};
+
+/* ***************************
+ *  Add New Inventory Item to the Database
+ *  This function handles the POST request for adding a new inventory item.
+ *  It retrieves all the necessary data from the request body,
+ *  invokes the model function to insert the data into the database,
+ *  and then redirects to the inventory management page.
+ * ************************** */
+
+invCont.addNewInventoryItem = async function (req, res, next) {
+  try {
+    const itemData = req.body; // Assuming all required fields are in req.body
+    await invModel.insertNewInventoryItem(itemData);
+    res.redirect("/inventory-management");
+  } catch (error) {
+    console.error("Error adding new inventory item:", error);
+    // Handle the error appropriately
+  }
+};
 
 /* ***************************
  *  Build inventory by classification view

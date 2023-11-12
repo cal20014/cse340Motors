@@ -601,34 +601,54 @@ input:required:valid {
 //   }
 // }
 
-/* Styles for the form container */
 .add-inventory-form-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  /* Styles for the form itself */
   .add-inventory-form {
     display: flex;
     flex-direction: column;
+    background-color: #0794c7;
+    padding: 2rem;
+    border-radius: 7px;
+
+    .label {
+      font-size: 1.75rem;
+      color: #232121;
+    }
+
+    .input {
+      margin: 0 0 1.5rem;
+    }
+    .top {
+      max-width: 350px;
+    }
+
+    .mid {
+      max-width: 500px;
+    }
+
+    .bottom {
+      max-width: 200px;
+    }
   }
   .fieldset {
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 8px;
+    padding: 1rem 5rem 1rem 1rem;
   }
 
   legend {
     padding: 0 10px;
     width: auto;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: #333;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
   }
 
-  /* Style for form labels */
   .add-inventory-form label {
     margin-top: 10px;
     margin-bottom: 5px;
@@ -637,7 +657,6 @@ input:required:valid {
     color: #555;
   }
 
-  /* Style for form inputs */
   .add-inventory-form input[type="text"],
   .add-inventory-form textarea {
     width: 100%;

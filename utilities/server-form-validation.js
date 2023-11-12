@@ -15,10 +15,8 @@ validate.addClassificationRules = () => {
       .trim()
       .isLength({ min: 1 })
       .withMessage("Classification name is required.")
-      .matches(/^[A-Za-z0-9]+$/, "i")
-      .withMessage(
-        "Classification name must not contain spaces or special characters."
-      ),
+      .matches(/^[A-Za-z]+$/)
+      .withMessage("Classification name must be alphabetic characters only."),
   ];
 };
 

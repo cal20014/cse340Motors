@@ -462,34 +462,49 @@ input:required:valid {
   padding: 0.5rem;
 }
 
-/* Styles for the form container */
 .add-inventory-form-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Styles for the form itself */
-  /* Style for form labels */
-  /* Style for form inputs */
   /* Style for the submit button */
   /* Responsive adjustments */
 }
 .add-inventory-form-container .add-inventory-form {
   display: flex;
   flex-direction: column;
+  background-color: #0794c7;
+  padding: 2rem;
+  border-radius: 7px;
+}
+.add-inventory-form-container .add-inventory-form .label {
+  font-size: 1.75rem;
+  color: #232121;
+}
+.add-inventory-form-container .add-inventory-form .input {
+  margin: 0 0 1.5rem;
+}
+.add-inventory-form-container .add-inventory-form .top {
+  max-width: 350px;
+}
+.add-inventory-form-container .add-inventory-form .mid {
+  max-width: 500px;
+}
+.add-inventory-form-container .add-inventory-form .bottom {
+  max-width: 200px;
 }
 .add-inventory-form-container .fieldset {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
+  padding: 1rem 5rem 1rem 1rem;
 }
 .add-inventory-form-container legend {
   padding: 0 10px;
   width: auto;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #333;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
 }
 .add-inventory-form-container .add-inventory-form label {
   margin-top: 10px;

@@ -25,15 +25,10 @@
         >Classification Name:</label
       >
       <p class="info">Name must be alphabetic characters only</p>
-      <input
-        class="input"
-        type="text"
-        name="classification_name"
-        id="classification_name"
-        pattern="[A-Za-z0-9 ]{1,}"
-        title="Classification name must not contain spaces or special characters."
-        required
-      />
+      <input class="input" type="text" name="classification_name"
+      id="classification_name" pattern="[A-Za-z0-9 ]{1,}" title="Classification
+      name must not contain spaces or special characters." required value="<%=
+      locals.classification_name %> />
       <button class="classification-btn" type="submit">
         Add Classification
       </button>

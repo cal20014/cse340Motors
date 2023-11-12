@@ -20,106 +20,124 @@
 
 <div class="add-inventory-form-container">
   <form class="add-inventory-form" method="POST">
+    <legend>*ALL FIELDS ARE REQUIRED</legend>
     <fieldset class="fieldset">
-      <legend>*ALL FIELDS ARE REQUIRED</legend>
-
       <%- classificationList %>
 
-      <label for="inv_make">Make:</label>
-      <input
-        type="text"
-        name="inv_make"
-        id="inv_make"
-        required
-        pattern="[A-Za-z0-9 ]{1,}"
-        title="Make can only contain letters, numbers, and spaces."
-        placeholder="Ford"
-      />
+      <div>
+        <label class="label" for="inv_make">Make:</label>
+        <input
+          class="input top"
+          type="text"
+          name="inv_make"
+          id="inv_make"
+          required
+          pattern="[A-Za-z0-9 ]{1,}"
+          title="Make can only contain letters, numbers, and spaces."
+          value="<%= locals.inv_make %>"
+          placeholder="Min of 3 characters"
+        />
 
-      <label for="inv_model">Model:</label>
-      <input
-        type="text"
-        name="inv_model"
-        id="inv_model"
-        required
-        pattern="[A-Za-z0-9 ]{1,}"
-        title="Model can only contain letters, numbers, and spaces."
-        placeholder="Mustang"
-      />
+        <label class="label" for="inv_model">Model:</label>
+        <input
+          class="input top"
+          type="text"
+          name="inv_model"
+          id="inv_model"
+          required
+          pattern="[A-Za-z0-9 ]{1,}"
+          title="Model can only contain letters, numbers, and spaces."
+          value="<%= locals.inv_model %>"
+          placeholder="Min of 3 characters"
+        />
 
-      <label for="inv_year">Year:</label>
-      <input
-        type="text"
-        name="inv_year"
-        id="inv_year"
-        required
-        pattern="\d{4}"
-        title="Please enter a valid year."
-        placeholder="2023"
-      />
+        <label class="label" for="inv_year">Year:</label>
+        <input
+          class="input top"
+          type="text"
+          name="inv_year"
+          id="inv_year"
+          required
+          pattern="\d{4}"
+          title="Please enter a valid year."
+          value="<%= locals.inv_year %>"
+          placeholder="4-digit year"
+        />
 
-      <label for="inv_description">Description:</label>
-      <textarea
-        name="inv_description"
-        id="inv_description"
-        required
-        placeholder="A detailed description of the item"
-      ></textarea>
+        <label class="label" for="inv_description">Description:</label>
+        <textarea
+          name="inv_description"
+          id="inv_description"
+          required
+          value="<%= locals.inv_description %>"
+          placeholder="A detailed description of the item"
+        ></textarea>
 
-      <label for="inv_image">Image:</label>
-      <input
-        type="text"
-        name="inv_image"
-        id="inv_image"
-        required
-        pattern=".*\.(png|jpg|jpeg|webp)$"
-        title="Image must end with .png, .jpg, .jpeg, or .webp"
-        placeholder="images/vehicles/image.jpg"
-      />
+        <label class="label" for="inv_image">Image:</label>
+        <input
+          class="input mid"
+          type="text"
+          name="inv_image"
+          id="inv_image"
+          required
+          pattern=".*\.(png|jpg|jpeg|webp)$"
+          title="Image must end with .png, .jpg, .jpeg, or .webp"
+          value="/images/vehicles/no-image.png"
+          placeholder="/images/vehicles/no-image.png"
+        />
 
-      <label for="inv_thumbnail">Thumbnail:</label>
-      <input
-        type="text"
-        name="inv_thumbnail"
-        id="inv_thumbnail"
-        required
-        pattern=".*\.(png|jpg|jpeg|webp)$"
-        title="Thumbnail must end with .png, .jpg, .jpeg, or .webp"
-        placeholder="images/vehicles/thumbnail.jpg"
-      />
+        <label class="label" for="inv_thumbnail">Thumbnail:</label>
+        <input
+          class="input mid"
+          type="text"
+          name="inv_thumbnail"
+          id="inv_thumbnail"
+          required
+          pattern=".*\.(png|jpg|jpeg|webp)$"
+          title="Thumbnail must end with .png, .jpg, .jpeg, or .webp"
+          value="/images/vehicles/no-image.png"
+          placeholder="/images/vehicles/no-image.png"
+        />
 
-      <label for="inv_price">Price:</label>
-      <input
-        type="text"
-        name="inv_price"
-        id="inv_price"
-        required
-        pattern="\d+(\.\d{2})?"
-        title="Please enter a valid price."
-        placeholder="19999.99"
-      />
+        <label class="label" for="inv_price">Price:</label>
+        <input
+          class="input bottom"
+          type="text"
+          name="inv_price"
+          id="inv_price"
+          required
+          pattern="\d+(\.\d{2})?"
+          title="Please enter a valid price."
+          value="<%= locals.inv_price %>"
+          placeholder="Decimal or Integer"
+        />
 
-      <label for="inv_miles">Miles:</label>
-      <input
-        type="text"
-        name="inv_miles"
-        id="inv_miles"
-        required
-        pattern="\d+"
-        title="Miles should only contain numbers."
-        placeholder="120000"
-      />
+        <label class="label" for="inv_miles">Miles:</label>
+        <input
+          class="input bottom"
+          type="text"
+          name="inv_miles"
+          id="inv_miles"
+          required
+          pattern="\d+"
+          title="Miles should only contain numbers."
+          value="<%= locals.inv_miles %>"
+          placeholder="Digits only"
+        />
 
-      <label for="inv_color">Color:</label>
-      <input
-        type="text"
-        name="inv_color"
-        id="inv_color"
-        required
-        pattern="[A-Za-z ]{1,}"
-        title="Color can only contain letters and spaces."
-        placeholder="Red"
-      />
+        <label class="label" for="inv_color">Color:</label>
+        <input
+          class="input bottom"
+          type="text"
+          name="inv_color"
+          id="inv_color"
+          required
+          pattern="[A-Za-z ]{1,}"
+          title="Color can only contain letters and spaces."
+          value="<%= locals.inv_color %>"
+          placeholder="Example: Red"
+        />
+      </div>
 
       <button type="submit">Add Inventory Item</button>
     </fieldset>
