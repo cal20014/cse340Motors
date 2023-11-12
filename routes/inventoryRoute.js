@@ -34,24 +34,18 @@ router.get(
 
 // Route to handle the submission of the add classification form
 router.post(
-  "/addClassification/",
+  "/add-classification/",
   validate.addClassificationRules(),
   validate.checkAddClassificationData,
-  utilities.handleErrors((req, res, next) => {
-    console.log("POST /addClassification/ - Received data:", req.body);
-    return invController.addNewClassification(req, res, next);
-  })
+  utilities.handleErrors(invController.addNewClassification)
 );
 
 // Route to handle the submission of the add inventory item form
 router.post(
-  "/addInventory/",
+  "/add-inventory/",
   validate.addInventoryItemRules(),
   validate.checkAddInventoryItemData,
-  utilities.handleErrors((req, res, next) => {
-    console.log("POST /addInventory/ - Received data:", req.body);
-    return invController.addNewInventoryItem(req, res, next);
-  })
+  utilities.handleErrors(invController.addNewInventoryItem)
 );
 
 module.exports = router;
