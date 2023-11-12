@@ -14,7 +14,7 @@ invCont.addNewClassification = async function (req, res, next) {
   try {
     const { classification_name } = req.body;
     await invModel.insertNewClassification(classification_name);
-    res.redirect("/inventory-management");
+    res.redirect("/inv");
   } catch (error) {
     console.error("Error adding new classification:", error);
   }
@@ -32,7 +32,7 @@ invCont.addNewInventoryItem = async function (req, res, next) {
   try {
     const itemData = req.body; // Assuming all required fields are in req.body
     await invModel.insertNewInventoryItem(itemData);
-    res.redirect("/inventory-management");
+    res.redirect("/inv");
   } catch (error) {
     console.error("Error adding new inventory item:", error);
     // Handle the error appropriately
