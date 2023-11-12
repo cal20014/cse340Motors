@@ -50,13 +50,13 @@ async function getVehicleDetailsById(vehicle_id) {
 /* ***************************
  *  Insert new classification
  * ************************** */
-async function insertNewClassification(classificationName) {
-  const query = `INSERT INTO public.classification (classification_name) VALUES ($1)`;
+async function insertNewClassification(classification_name) {
   try {
-    await pool.query(query, [classificationName]);
+    const sql = `INSERT INTO public.classification (classification_name) VALUES ($1)`;
+    return await pool.query(sql, [classification_name]);
   } catch (error) {
     console.error("insertNewClassification error:", error);
-    throw error;
+    return error.message;
   }
 }
 
@@ -65,7 +65,7 @@ async function insertNewClassification(classificationName) {
  * ************************** */
 
 async function insertNewInventoryItem(itemData) {
-  const query = `
+  const sql = `
     INSERT INTO public.inventory (
       inv_make, inv_model, inv_year,
       inv_description, inv_image, inv_thumbnail,
@@ -87,10 +87,10 @@ async function insertNewInventoryItem(itemData) {
   ];
 
   try {
-    await pool.query(query, values);
+    return await pool.query(sql, values);
   } catch (error) {
     console.error("insertNewInventoryItem error:", error);
-    throw error;
+    return error.message;
   }
 }
 

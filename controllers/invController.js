@@ -7,16 +7,25 @@ const invCont = {};
  *  This function handles the POST request for adding a new classification.
  *  It extracts the classification name from the request body,
  *  invokes the model function to insert it into the database,
- *  and then redirects to the inventory management page.
+ *  and then redirects to the inventory management page and displays a success message.
  * ************************** */
 
 invCont.addNewClassification = async function (req, res, next) {
   try {
     const { classification_name } = req.body;
     await invModel.insertNewClassification(classification_name);
-    res.redirect("/inv");
+    req.flash(
+      "notice",
+      `New classification ${classification_name} added successfully!`
+    );
+    res.status(201).redirect("/inv");
   } catch (error) {
     console.error("Error adding new classification:", error);
+    req.flash("error", "Error adding new classification.");
+    res.status(500).render("inv/classification_add", {
+      title: "Add Classification",
+      nav,
+    });
   }
 };
 
@@ -25,17 +34,22 @@ invCont.addNewClassification = async function (req, res, next) {
  *  This function handles the POST request for adding a new inventory item.
  *  It retrieves all the necessary data from the request body,
  *  invokes the model function to insert the data into the database,
- *  and then redirects to the inventory management page.
+ *  and then redirects to the inventory management page and displays a success message.
  * ************************** */
 
 invCont.addNewInventoryItem = async function (req, res, next) {
   try {
-    const itemData = req.body; // Assuming all required fields are in req.body
+    const itemData = req.body;
     await invModel.insertNewInventoryItem(itemData);
-    res.redirect("/inv");
+    req.flash("notice", "New inventory item added successfully!");
+    res.status(201).redirect("/inv");
   } catch (error) {
     console.error("Error adding new inventory item:", error);
-    // Handle the error appropriately
+    req.flash("error", "Error adding new inventory item.");
+    res.status(500).render("inv/item_add", {
+      title: "Add Inventory Item",
+      nav,
+    });
   }
 };
 

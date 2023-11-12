@@ -138,8 +138,8 @@ Util.buildClassificationList = async function (classification_id = null) {
 Util.buildInventoryManagement = async function (data) {
   let view = `
   <div class="inv-management">
-    <a class="link" href="addClassification">Add new classification</a>
-    <a class="link" href="addInventory">Add new inventory</a>
+    <a class="link" href="/inv/addClassification">Add new classification</a>
+    <a class="link" href="/inv/addInventory">Add new inventory</a>
   </div>
   `;
   return view;

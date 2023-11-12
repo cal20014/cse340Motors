@@ -127,6 +127,7 @@ validate.checkAddInventoryItemData = async (req, res, next) => {
   errors = validationResult(req);
   if (!errors.isEmpty()) {
     let nav = await utilities.getNav();
+    const classificationList = await utilities.buildClassificationList();
     res.render("inventory/addInventory", {
       errors,
       title: "Add Inventory Item",
@@ -141,6 +142,7 @@ validate.checkAddInventoryItemData = async (req, res, next) => {
       inv_miles,
       inv_color,
       classification_id,
+      classificationList,
     });
     return;
   }

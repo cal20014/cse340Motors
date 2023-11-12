@@ -30,6 +30,10 @@ body {
   padding: 0.2rem;
 }
 
+.notice {
+  color: rgb(192, 0, 0);
+}
+
 img {
   max-width: 100%;
 }
