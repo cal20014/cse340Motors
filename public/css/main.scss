@@ -582,7 +582,13 @@ input:required:valid {
 
   .link {
     color: #242332;
-    padding: 0.5rem;
+    padding: 1rem 4rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .link:hover {
+    color: rgb(195, 136, 0);
   }
 }
 

@@ -118,7 +118,11 @@ Util.buildClassificationList = async function (classification_id = null) {
     '<select name="classification_id" id="classificationList" >';
   classificationList += "<option>Choose a Classification</option>";
   data.rows.forEach((row) => {
-    classificationList += `<option value="" ${row.classification_id}>`;
+    classificationList += `<option value="${row.classification_id}"${
+      classification_id != null && row.classification_id == classification_id
+        ? " selected"
+        : ""
+    }>${row.classification_name}</option>`;
     if (
       classification_id != null &&
       row.classification_id == classification_id
@@ -140,20 +144,6 @@ Util.buildInventoryManagement = async function (data) {
   `;
   return view;
 };
-
-// Util.buildAddClassification = async function (data) {
-//   let view = `
-
-//   `;
-//   return view;
-// };
-
-// Util.buildAddInventoryItem = async function (data) {
-//   let view = `
-
-//   `;
-//   return view;
-// };
 
 /* ****************************************
  * Middleware For Handling Errors
