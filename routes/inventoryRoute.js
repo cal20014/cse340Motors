@@ -34,7 +34,7 @@ router.get(
 
 // Route to handle the submission of the add classification form
 router.post(
-  "/add-classification/",
+  "/addClassification/",
   validate.addClassificationRules(),
   validate.checkAddClassificationData,
   utilities.handleErrors(invController.addNewClassification)
@@ -42,7 +42,7 @@ router.post(
 
 // Route to handle the submission of the add inventory item form
 router.post(
-  "/add-inventory/",
+  "/addInventory/",
   validate.addInventoryItemRules(),
   validate.checkAddInventoryItemData,
   utilities.handleErrors(invController.addNewInventoryItem)
