@@ -21,7 +21,6 @@ router.get(
   "/register",
   utilities.handleErrors(accountController.buildRegister)
 );
-
 /* ***********************
  * Add New Account Message
  *************************/
