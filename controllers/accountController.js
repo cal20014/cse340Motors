@@ -123,6 +123,18 @@ async function logout(req, res) {
   res.redirect("/");
 }
 
+/* ***********************
+ * Get Account View
+ *************************/
+async function getAccountManagementView(req, res, next) {
+  let nav = await utilities.getNav();
+  res.render("account/accountManagement", {
+    title: "Account Management",
+    nav,
+    errors: null,
+  });
+}
+
 module.exports = {
   buildLogin,
   buildRegister,

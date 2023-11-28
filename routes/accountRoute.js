@@ -27,8 +27,8 @@ router.get(
  *************************/
 router.post(
   "/login",
-  regValidate.loginRules(),
-  regValidate.checkLoginData,
+  regValidate.registationRules(),
+  regValidate.checkRegData,
   utilities.handleErrors(accountController.accountLogin)
 );
 
@@ -40,6 +40,15 @@ router.post(
   regValidate.registationRules(),
   regValidate.checkRegData,
   utilities.handleErrors(accountController.registerAccount)
+);
+
+/* ***********************
+ * Get Account View
+ *************************/
+
+router.get(
+  "/account",
+  utilities.handleErrors(accountController.getAccountManagementView)
 );
 
 module.exports = router;
