@@ -27,8 +27,8 @@ router.get(
  *************************/
 router.post(
   "/login",
-  regValidate.registationRules(),
-  regValidate.checkRegData,
+  regValidate.loginRules(),
+  regValidate.checkLoginData,
   utilities.handleErrors(accountController.accountLogin)
 );
 
