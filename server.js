@@ -103,6 +103,11 @@ app.use(async (err, req, res, next) => {
 });
 
 /* ***********************
+ * Middleware to check token validity
+ *************************/
+app.use(utilities.checkJWTToken);
+
+/* ***********************
  * Local Server Information
  * Values from .env (environment) file
  *************************/
