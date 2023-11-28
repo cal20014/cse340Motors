@@ -21,6 +21,17 @@ router.get(
   "/register",
   utilities.handleErrors(accountController.buildRegister)
 );
+
+/* ***********************
+ * Process Login
+ *************************/
+router.post(
+  "/login",
+  regValidate.loginRules(),
+  regValidate.checkLoginData,
+  utilities.handleErrors(accountController.accountLogin)
+);
+
 /* ***********************
  * Add New Account Message
  *************************/
