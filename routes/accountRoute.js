@@ -47,7 +47,8 @@ router.post(
  *************************/
 
 router.get(
-  "/account",
+  "/",
+  utilities.checkLogin,
   utilities.handleErrors(accountController.getAccountManagementView)
 );
 
