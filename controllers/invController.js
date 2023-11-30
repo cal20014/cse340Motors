@@ -137,4 +137,20 @@ invCont.getInventoryJSON = async (req, res, next) => {
   }
 };
 
+invCont.editInventoryItem = async (req, res, next) => {
+  const inv_id = req.params.inv_id;
+  const invData = await invModel.getInventoryById(inv_id);
+  const classificationList = await utilities.buildClassificationList(
+    invData.classification_id
+  );
+  const nav = await utilities.getNav();
+  res.render("./inventory/editInventory", {
+    title: "Edit Inventory Item",
+    nav,
+    invData,
+    classificationList,
+    errors: null,
+  });
+};
+
 module.exports = invCont;
