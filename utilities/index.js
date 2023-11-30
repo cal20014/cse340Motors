@@ -159,25 +159,19 @@ Util.handleErrors = (fn) => (req, res, next) =>
  * Middleware to check token validity
  **************************************** */
 Util.checkJWTToken = (req, res, next) => {
+  console.log("Checking JWT Token");
   if (req.cookies.jwt) {
     jwt.verify(
       req.cookies.jwt,
       process.env.ACCESS_TOKEN_SECRET,
       function (err, accountData) {
         if (err) {
-          console.log("=============================================");
-          console.log("Error: ", err);
-          console.log("=============================================");
-          req.flash("Please log in.");
+          req.flash("Please log in");
           res.clearCookie("jwt");
           return res.redirect("/account/login");
         }
         res.locals.accountData = accountData;
         res.locals.loggedin = 1;
-        console.log("=============================================");
-        console.log(accountData);
-        console.log(loggedin);
-        console.log("=============================================");
         next();
       }
     );
@@ -190,14 +184,10 @@ Util.checkJWTToken = (req, res, next) => {
  *  Check Login
  * ************************************ */
 Util.checkLogin = (req, res, next) => {
-  console.log("=============================================");
-  console.log(res.locals.loggedin);
-  console.log("=============================================");
-
   if (res.locals.loggedin) {
     next();
   } else {
-    req.flash("notice", "Please log in!");
+    req.flash("notice", "Please log in.");
     return res.redirect("/account/login");
   }
 };

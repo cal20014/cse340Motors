@@ -91,11 +91,13 @@ invCont.displayVehicleDetail = async function (req, res, next) {
  * ************************** */
 invCont.buildInventoryManagement = async function (req, res, next) {
   const nav = await utilities.getNav();
+  const classificationSelect = await utilities.buildClassificationList();
   const managementView = await utilities.buildInventoryManagement();
   res.render("./inventory/management", {
     title: "Inventory Management",
     nav,
     managementView,
+    classificationSelect,
     errors: null,
   });
 };
