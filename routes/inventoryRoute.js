@@ -55,18 +55,34 @@ router.get(
   utilities.handleErrors(invController.getInventoryJSONData)
 );
 
-//
+// Route to display the edit inventory item form
 router.get(
-  "/inv/edit/:inv_id",
+  "/edit/:inv_id",
   utilities.handleErrors(invController.editInventoryView)
 );
 
-//
+// Route to handle the submission of the update inventory item form
 router.post(
   "/update/",
   validate.addInventoryItemRules(),
   validate.checkUpdateData,
   utilities.handleErrors(invController.updateInventory)
+);
+
+/* ***************************
+ *  Deliver the delete confirmation view
+ * ************************** */
+router.get(
+  "/delete/:inv_id",
+  utilities.handleErrors(invController.deleteInventoryView)
+);
+
+/* ***************************
+ *  Process the delete request
+ * ************************** */
+router.post(
+  "/delete/",
+  utilities.handleErrors(invController.deleteInventoryItem)
 );
 
 module.exports = router;
