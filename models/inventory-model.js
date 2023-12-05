@@ -47,9 +47,6 @@ async function getVehicleDetailsById(vehicle_id) {
 /* ***************************
  *  Insert a new classification
  * ************************** */
-/* ***************************
- *  Insert new classification
- * ************************** */
 async function insertNewClassification(classification_name) {
   try {
     const sql = `INSERT INTO public.classification (classification_name) VALUES ($1)`;
@@ -91,6 +88,34 @@ async function insertNewInventoryItem(itemData) {
   } catch (error) {
     console.error("insertNewInventoryItem error:", error);
     return error.message;
+  }
+}
+
+/* ***************************
+ *  Update inventory item
+ * ************************** */
+
+async function updateInventory(itemData) {
+  const sql =
+    "UPDATE public.inventory SET inv_make = $1, inv_model = $2, inv_description = $3, inv_image = $4, inv_thumbnail = $5, inv_price = $6, inv_year = $7, inv_miles = $8, inv_color = $9, classification_id = $10 WHERE inv_id = $11 RETURNING *";
+
+  const values = [
+    itemData.inv_make,
+    itemData.inv_model,
+    itemData.inv_year,
+    itemData.inv_description,
+    itemData.inv_image,
+    itemData.inv_thumbnail,
+    itemData.inv_price,
+    itemData.inv_miles,
+    itemData.inv_color,
+    itemData.classification_id,
+  ];
+
+  try {
+    return await pool.query(sql, values);
+  } catch (error) {
+    console.error("model error: " + error);
   }
 }
 

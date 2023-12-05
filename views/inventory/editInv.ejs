@@ -16,7 +16,12 @@
 <% } %>
 
 <div class="edit-inventory-form-container">
-  <form action="/inv/update" method="post" class="edit-inventory-form">
+  <form
+    action="/inv/update"
+    method="post"
+    id="updateForm"
+    class="edit-inventory-form"
+  >
     <legend>*ALL FIELDS ARE REQUIRED</legend>
     <fieldset class="fieldset">
       <%- classificationList %>
@@ -136,10 +141,17 @@
         />
       </div>
 
-      <button type="submit" name="submit" value="Update Vehicle"></button>
+      <button
+        type="button"
+        name="submit"
+        value="Update Vehicle"
+        disabled
+      ></button>
 
       <input type="hidden" name="inv_id" <% if(locals.inv_id) { % /> value="<%=
       locals.inv_id %>" <% } %>>
     </fieldset>
   </form>
 </div>
+
+<script src="../../js/inv-update.js"></script>
