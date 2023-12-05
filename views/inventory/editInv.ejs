@@ -15,9 +15,6 @@
 </ul>
 <% } %>
 
-<!-- Management view -->
-<!-- <%#- editInventoryView %> -->
-
 <div class="edit-inventory-form-container">
   <form action="/inv/update" method="post" class="edit-inventory-form">
     <legend>*ALL FIELDS ARE REQUIRED</legend>
@@ -140,6 +137,9 @@
       </div>
 
       <button type="submit" name="submit" value="Update Vehicle"></button>
+
+      <input type="hidden" name="inv_id" <% if(locals.inv_id) { % /> value="<%=
+      locals.inv_id %>" <% } %>>
     </fieldset>
   </form>
 </div>
