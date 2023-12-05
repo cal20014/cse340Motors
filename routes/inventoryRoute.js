@@ -48,14 +48,17 @@ router.post(
   utilities.handleErrors(invController.addNewInventoryItem)
 );
 
+//
 router.get(
   "/getInventory/:classification_id",
+  // utilities.checkAccountType,
   utilities.handleErrors(invController.getInventoryJSONData)
 );
 
+//
 router.get(
   "/inv/edit/:inv_id",
-  utilities.handleErrors(invController.editInventoryItem)
+  utilities.handleErrors(invController.editInventoryView)
 );
 
 module.exports = router;
