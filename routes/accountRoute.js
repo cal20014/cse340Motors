@@ -48,7 +48,7 @@ router.post(
 
 router.get(
   "/",
-  // utilities.checkLogin,   // change this back to checkLogin. This was commented out to coniue forwad with development testing
+  utilities.checkLogin,   // change this back to checkLogin. This was commented out to coniue forwad with development testing
   utilities.handleErrors(accountController.getAccountManagementView)
 );
 

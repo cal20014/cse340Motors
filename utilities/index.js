@@ -159,7 +159,7 @@ Util.handleErrors = (fn) => (req, res, next) =>
  * Middleware to check token validity
  **************************************** */
 Util.checkJWTToken = (req, res, next) => {
-  console.log("Checking JWT Token");
+  // console.log("Checking JWT Token");
   if (req.cookies.jwt) {
     jwt.verify(
       req.cookies.jwt,
