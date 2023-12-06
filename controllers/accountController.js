@@ -170,7 +170,10 @@ async function updateAccount(req, res, next) {
     return;
   }
 
-  const updateResult = await accountModel.updateAccount(account_email, account_name);
+  const updateResult = await accountModel.updateAccount(
+    account_email,
+    account_name
+  );
 
   let message;
   if (updateResult) {
@@ -216,7 +219,10 @@ async function changePassword(req, res, next) {
   }
 
   const hashedPassword = await bcrypt.hash(newPassword, 10);
-  const updateResult = await accountModel.updatePassword(account_email, hashedPassword);
+  const updateResult = await accountModel.updatePassword(
+    account_email,
+    hashedPassword
+  );
 
   let message;
   if (updateResult) {
@@ -243,10 +249,13 @@ async function changePassword(req, res, next) {
   });
 }
 
-
-
-
-
+/* ***********************
+ * Process Logout
+ *************************/
+function logout(req, res) {
+  res.clearCookie("jwt");
+  res.redirect("/");
+}
 
 /* ***********************
  * Export Controller
@@ -262,4 +271,5 @@ module.exports = {
   buildUpdate,
   updateAccount,
   changePassword,
+  logout,
 };

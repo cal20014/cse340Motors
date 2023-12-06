@@ -122,9 +122,9 @@ validate.checkLoginData = async (req, res, next) => {
 
 validate.updateRules = () => {
   return [
-    body('firstName').notEmpty().withMessage('First name is required'),
-    body('lastName').notEmpty().withMessage('Last name is required'),
-    body('email').isEmail().withMessage('Email is not valid'),
+    body("firstName").notEmpty().withMessage("First name is required"),
+    body("lastName").notEmpty().withMessage("Last name is required"),
+    body("email").isEmail().withMessage("Email is not valid"),
   ];
 };
 
@@ -138,7 +138,9 @@ validate.checkUpdateUserData = (req, res, next) => {
 
 validate.passwordRules = () => {
   return [
-    body('newPassword').isLength({ min: 8 }).withMessage('Password must be at least 8 characters long'),
+    body("newPassword")
+      .isLength({ min: 8 })
+      .withMessage("Password must be at least 8 characters long"),
   ];
 };
 
