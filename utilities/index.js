@@ -192,4 +192,27 @@ Util.checkLogin = (req, res, next) => {
   }
 };
 
+Util.checkAccountType = (req, res, next) => {
+  const token = req.cookies.jwt;
+
+  if (token) {
+    jwt.verify(token, 'your_secret_key', (err, decodedToken) => {
+      if (err) {
+        res.redirect('/login');
+        res.send('You must be logged in as an Employee or Admin to access this page.');
+      } else {
+        if (decodedToken.accountType === 'Employee' || decodedToken.accountType === 'Admin') {
+          next();
+        } else {
+          res.redirect('/login');
+          res.send('You must be logged in as an Employee or Admin to access this page.');
+        }
+      }
+    });
+  } else {
+    res.redirect('/login');
+    res.send('You must be logged in to access this page.');
+  }
+}
+
 module.exports = Util;

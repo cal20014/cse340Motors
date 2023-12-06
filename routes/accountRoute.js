@@ -48,8 +48,39 @@ router.post(
 
 router.get(
   "/",
-  utilities.checkLogin,   // change this back to checkLogin. This was commented out to coniue forwad with development testing
+  utilities.checkLogin,
   utilities.handleErrors(accountController.getAccountManagementView)
+);
+
+
+/* ***********************
+ * Get Update Account View
+ *************************/
+
+router.get(
+  "/update/:id",
+  utilities.checkLogin,
+  utilities.handleErrors(accountController.getUpdateAccountView)
+);
+
+/* ***********************
+ * Update Account Information
+ *************************/
+
+router.post(
+  "/update/:id",
+  utilities.checkLogin,
+  utilities.handleErrors(accountController.updateAccount)
+);
+
+/* ***********************
+ * Change Password
+ *************************/
+
+router.post(
+  "/change-password/:id",
+  utilities.checkLogin,
+  utilities.handleErrors(accountController.changePassword)
 );
 
 module.exports = router;
