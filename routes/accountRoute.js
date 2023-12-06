@@ -70,6 +70,8 @@ router.get(
 router.post(
   "/update/:id",
   utilities.checkLogin,
+  regValidate.updateRules(),
+  regValidate.checkUpdateUserData,
   utilities.handleErrors(accountController.updateAccount)
 );
 
@@ -80,6 +82,8 @@ router.post(
 router.post(
   "/change-password/:id",
   utilities.checkLogin,
+  regValidate.passwordRules(),
+  regValidate.checkPasswordData,
   utilities.handleErrors(accountController.changePassword)
 );
 

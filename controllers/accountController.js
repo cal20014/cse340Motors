@@ -137,6 +137,121 @@ async function getAccountManagementView(req, res, next) {
   });
 }
 
+/* ***********************
+ * Deliver Update Account View
+ *************************/
+async function buildUpdate(req, res, next) {
+  let nav = await utilities.getNav();
+  const accountData = await accountModel.getAccountById(req.params.id);
+  res.render("account/update", {
+    title: "Update Account",
+    nav,
+    accountData,
+    errors: null,
+  });
+}
+
+/* ***********************
+ * Process Update Account
+ *************************/
+async function updateAccount(req, res, next) {
+  let nav = await utilities.getNav();
+  const { account_email, account_name } = req.body;
+  const errors = validate.checkUpdateUserData(req);
+
+  if (errors.length > 0) {
+    res.status(400).render("account/update", {
+      title: "Update Account",
+      nav,
+      errors,
+      account_email,
+      account_name,
+    });
+    return;
+  }
+
+  const updateResult = await accountModel.updateAccount(account_email, account_name);
+
+  let message;
+  if (updateResult) {
+    message = "Account updated successfully.";
+  } else {
+    message = "Failed to update account.";
+  }
+
+  req.flash("notice", message);
+
+  const accountData = await accountModel.getAccountByEmail(account_email);
+
+  if (updateResult) {
+    res.status(200);
+  } else {
+    res.status(500);
+  }
+
+  res.render("account/management", {
+    title: "Account Management",
+    nav,
+    accountData,
+    errors: null,
+  });
+}
+
+/* ***********************
+ * Process Change Password
+ *************************/
+async function changePassword(req, res, next) {
+  let nav = await utilities.getNav();
+  const { account_email, oldPassword, newPassword } = req.body;
+  const errors = validate.checkPasswordData(req);
+
+  if (errors.length > 0) {
+    res.status(400).render("account/update", {
+      title: "Update Account",
+      nav,
+      errors,
+      account_email,
+    });
+    return;
+  }
+
+  const hashedPassword = await bcrypt.hash(newPassword, 10);
+  const updateResult = await accountModel.updatePassword(account_email, hashedPassword);
+
+  let message;
+  if (updateResult) {
+    message = "Password updated successfully.";
+  } else {
+    message = "Failed to update password.";
+  }
+
+  req.flash("notice", message);
+
+  const accountData = await accountModel.getAccountByEmail(account_email);
+
+  if (updateResult) {
+    res.status(200);
+  } else {
+    res.status(500);
+  }
+
+  res.render("account/management", {
+    title: "Account Management",
+    nav,
+    accountData,
+    errors: null,
+  });
+}
+
+
+
+
+
+
+/* ***********************
+ * Export Controller
+ *************************/
+
 module.exports = {
   buildLogin,
   buildRegister,
@@ -144,4 +259,7 @@ module.exports = {
   accountLogin,
   logout,
   getAccountManagementView,
+  buildUpdate,
+  updateAccount,
+  changePassword,
 };
