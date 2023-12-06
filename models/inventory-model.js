@@ -102,14 +102,15 @@ async function updateInventory(itemData) {
   const values = [
     itemData.inv_make,
     itemData.inv_model,
-    itemData.inv_year,
     itemData.inv_description,
     itemData.inv_image,
     itemData.inv_thumbnail,
     itemData.inv_price,
+    itemData.inv_year,
     itemData.inv_miles,
     itemData.inv_color,
     itemData.classification_id,
+    itemData.inv_id,
   ];
 
   try {
@@ -125,4 +126,5 @@ module.exports = {
   getVehicleDetailsById,
   insertNewClassification,
   insertNewInventoryItem,
+  updateInventory,
 };

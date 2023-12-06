@@ -24,7 +24,7 @@
   >
     <legend>*ALL FIELDS ARE REQUIRED</legend>
     <fieldset class="fieldset">
-      <%- classificationList %>
+      <% classificationSelect %>
       <div>
         <label class="label" for="inv_make">Make:</label>
         <input
@@ -140,12 +140,12 @@
           placeholder="Example: Red"
         />
       </div>
-
+<!-- Add Disabled to the button -->
       <button
-        type="button"
+        type="submit"
         name="submit"
-        disabled
-      >Update Vehicle</button>
+        
+      >Update Vehicle</button> 
 
       <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%=
       locals.inv_id %>" <% } %>>
