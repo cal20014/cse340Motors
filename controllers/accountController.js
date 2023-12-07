@@ -143,12 +143,10 @@ async function getAccountManagementView(req, res, next) {
 async function getUpdateAccountView(req, res, next) {
   let nav = await utilities.getNav();
   const accountData = await accountModel.getAccountById(req.params.account_id);
-  console.log(accountData);
   res.render("account/updateAccount", {
     title: "Update Account",
     nav,
     accountData,
-    account_firstname: accountData.account_firstname,
     errors: null,
   });
 }
@@ -156,48 +154,28 @@ async function getUpdateAccountView(req, res, next) {
 /* ***********************
  * Process Update Account
  *************************/
-
-// use redirect instead of render
 async function updateAccount(req, res, next) {
   let nav = await utilities.getNav();
-  const { account_email, account_name } = req.body;
-    res.render("account/", {
-      title: "Update Account",
-      nav,
-      errors: null,
-      account_email,
-      account_name,
-    });
-    return;
-
-  const updateResult = await accountModel.updateAccount(
-    account_email,
-    account_name
-  );
-
+  const { account_firstname, account_lastname, account_email, account_id} = req.body
+  // console.log(account_firstname, account_lastname, account_email, account_id);
+  const updateResult = await accountModel.updateAccount(account_firstname, account_lastname, account_email, account_id);
   let message;
   if (updateResult) {
     message = "Account updated successfully.";
+    res.redirect("/account/");
   } else {
     message = "Failed to update account.";
+    res.status(501).render("account/updateAccount", {
+        title: "Update Account",
+        nav,
+        errors: null,
+        account_firstname,
+        account_lastname,
+        account_email,
+        account_id,
+      });
+      return;
   }
-
-  req.flash("notice", message);
-
-  const accountData = await accountModel.getAccountByEmail(account_email);
-
-  if (updateResult) {
-    res.status(200);
-  } else {
-    res.status(500);
-  }
-
-  res.render("account/management", {
-    title: "Account Management",
-    nav,
-    accountData,
-    errors: null,
-  });
 }
 
 /* ***********************

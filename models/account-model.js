@@ -77,7 +77,7 @@ async function getAccountById (account_id) {
     const result = await pool.query(
       'SELECT account_id, account_firstname, account_lastname, account_email, account_type, account_password FROM account WHERE account_id = $1',
       [account_id])
-      console.log(result.rows[0])
+      // console.log(result.rows[0])
       return result.rows[0]
   } catch (error) {
     return new Error("No matching id found")
@@ -87,13 +87,11 @@ async function getAccountById (account_id) {
 /* ***********************
  * Update Account
  *************************/
-async function updateAccount(account_id, account_email, account_name) {
+async function updateAccount(account_firstname, account_lastname, account_email, account_id) {
+  // console.log(`Params of update account = ${account_firstname}, ${account_lastname}, ${account_email}, ${account_id}`);
   try {
-    const result = await pool.query(
-      "UPDATE account SET account_email = $1, account_name = $2 WHERE account_id = $3",
-      [account_email, account_name, account_id]
-    );
-    return result.rowCount > 0;
+    const sql = `UPDATE account SET account_firstname = $1, account_lastname = $2, account_email = $3 WHERE account_id = $4`;
+    return await pool.query(sql, [account_firstname, account_lastname, account_email, account_id]);
   } catch (error) {
     return false;
   }

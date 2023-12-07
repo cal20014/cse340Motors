@@ -122,9 +122,9 @@ validate.checkLoginData = async (req, res, next) => {
 
 validate.updateRules = () => {
   return [
-    body("firstName").notEmpty().withMessage("First name is required"),
-    body("lastName").notEmpty().withMessage("Last name is required"),
-    body("email").isEmail().withMessage("Email is not valid"),
+    body("account_firstname").notEmpty().withMessage("First name is required"),
+    body("account_lastname").notEmpty().withMessage("Last name is required"),
+    body("account_email").isEmail().withMessage("Email is not valid"),
   ];
 };
 
