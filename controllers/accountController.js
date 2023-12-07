@@ -140,10 +140,10 @@ async function getAccountManagementView(req, res, next) {
 /* ***********************
  * Deliver Update Account View
  *************************/
-async function buildUpdate(req, res, next) {
+async function getUpdateAccountView(req, res, next) {
   let nav = await utilities.getNav();
   const accountData = await accountModel.getAccountById(req.params.id);
-  res.render("account/update", {
+  res.render("account/updateAccount", {
     title: "Update Account",
     nav,
     accountData,
@@ -268,7 +268,7 @@ module.exports = {
   accountLogin,
   logout,
   getAccountManagementView,
-  buildUpdate,
+  getUpdateAccountView,
   updateAccount,
   changePassword,
   logout,
