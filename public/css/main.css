@@ -126,6 +126,22 @@ img {
   display: flex;
   justify-content: space-between;
 }
+.header .hero-section .heading-text-container .tools {
+  display: flex;
+}
+.header .hero-section .heading-text-container .tools a {
+  text-decoration: none;
+  color: #000000;
+  padding: 1rem;
+  border: 1px dotted transparent;
+}
+.header .hero-section .heading-text-container .tools a:hover {
+  transition: color 500ms;
+  border: 1px dotted #000000;
+}
+.header .hero-section .heading-text-container .tools .text-heading {
+  padding: 1rem;
+}
 .header .hero-section .heading-text-container .siteName .link {
   font-size: 4.8rem;
   font-weight: 700;

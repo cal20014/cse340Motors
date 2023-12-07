@@ -12,17 +12,17 @@
     <h1 class="update-header"><%= locals.accountData.account_email %> Account Information</h1>
     
     <div class="update-account-form-container">
-      <form class="update-account-form" action="/account/update-info/<%= locals.accountData.account_id %>" method="POST">
+      <form class="update-account-form" action="/account/update-info/" method="POST">
         <fieldset class="fieldset">
           <div>
             <label class="label" for="firstName">First Name:</label>
-            <input class="input top" type="text" id="firstName" name="firstName" value="<%= locals.accountData.firstName %>" required>
+            <input class="input top" type="text" id="firstName" name="firstName" value="<%= locals.accountData.account_firstname %>" required>
             
             <label class="label" for="lastName">Last Name:</label>
-            <input class="input top" type="text" id="lastName" name="lastName" value="<%= locals.accountData.lastName %>" required>
+            <input class="input top" type="text" id="lastName" name="lastName" value="<%= locals.accountData.account_lastname %>" required>
             
             <label class="label" for="email">Email:</label>
-            <input class="input top" type="email" id="email" name="email" value="<%= locals.accountData.email %>" required>
+            <input class="input top" type="email" id="email" name="email" value="<%= locals.accountData.account_email %>" required>
             
             <input class="form-hidden" type="hidden" name="accountId" value="<%= locals.accountData.account_id %>">
             

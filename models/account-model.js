@@ -76,7 +76,7 @@ async function getAccountById (account_id) {
   try {
     const result = await pool.query(
       'SELECT account_id, account_firstname, account_lastname, account_email, account_type, account_password FROM account WHERE account_id = $1',
-      [11])
+      [account_id])
       console.log(result.rows[0])
       return result.rows[0]
   } catch (error) {

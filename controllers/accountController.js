@@ -142,12 +142,13 @@ async function getAccountManagementView(req, res, next) {
  *************************/
 async function getUpdateAccountView(req, res, next) {
   let nav = await utilities.getNav();
-  const accountData = await accountModel.getAccountById(req.params.id);
+  const accountData = await accountModel.getAccountById(req.params.account_id);
   console.log(accountData);
   res.render("account/updateAccount", {
     title: "Update Account",
     nav,
     accountData,
+    account_firstname: accountData.account_firstname,
     errors: null,
   });
 }
@@ -155,21 +156,19 @@ async function getUpdateAccountView(req, res, next) {
 /* ***********************
  * Process Update Account
  *************************/
+
+// use redirect instead of render
 async function updateAccount(req, res, next) {
   let nav = await utilities.getNav();
   const { account_email, account_name } = req.body;
-  const errors = validate.checkUpdateUserData(req);
-
-  if (errors.length > 0) {
-    res.status(400).render("account/update", {
+    res.render("account/", {
       title: "Update Account",
       nav,
-      errors,
+      errors: null,
       account_email,
       account_name,
     });
     return;
-  }
 
   const updateResult = await accountModel.updateAccount(
     account_email,
