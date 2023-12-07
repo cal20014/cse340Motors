@@ -9,32 +9,44 @@
     <!-- messages -->
     <%- messages() %>
     
-    <h1>Update Account Information</h1>
+    <h1 class="update-header"><%= locals.accountData.account_email %> Account Information</h1>
     
-    <form action="/account/update/<%= accountData.id %>" method="POST">
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" name="firstName" value="<%= accountData.firstName %>" required>
-      
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="lastName" value="<%= accountData.lastName %>" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" value="<%= accountData.email %>" required>
-      
-      <input type="hidden" name="accountId" value="<%= accountData.id %>">
-      
-      <input type="submit" value="Update Account">
-    </form>
+    <div class="update-account-form-container">
+      <form class="update-account-form" action="/account/update-info/<%= locals.accountData.account_id %>" method="POST">
+        <fieldset class="fieldset">
+          <div>
+            <label class="label" for="firstName">First Name:</label>
+            <input class="input top" type="text" id="firstName" name="firstName" value="<%= locals.accountData.firstName %>" required>
+            
+            <label class="label" for="lastName">Last Name:</label>
+            <input class="input top" type="text" id="lastName" name="lastName" value="<%= locals.accountData.lastName %>" required>
+            
+            <label class="label" for="email">Email:</label>
+            <input class="input top" type="email" id="email" name="email" value="<%= locals.accountData.email %>" required>
+            
+            <input class="form-hidden" type="hidden" name="accountId" value="<%= locals.accountData.account_id %>">
+            
+            <button type="submit">Update Account</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
     
-    <h1>Change Password</h1>
+    <h1 class="password-header">Change Password</h1>
     
-    <form action="/account/change-password/<%= accountData.id %>" method="POST">
-      <label for="newPassword">New Password:</label>
-      <input type="password" id="newPassword" name="newPassword" required>
-      
-      <p>Password must be at least 8 characters long and contain at least one number and one special character.</p>
-      
-      <input type="hidden" name="accountId" value="<%= accountData.id %>">
-      
-      <input type="submit" value="Change Password">
-    </form>
+    <div class="update-account-form-container">
+      <form class="update-account-form" action="/account/change-password/<%= locals.accountData.account_id %>" method="POST">
+        <fieldset class="fieldset">
+          <div>
+            <label class="label" for="newPassword">New Password:</label>
+            <input class="input top" type="password" id="newPassword" name="newPassword" required>
+            
+            <p class="password-requirements">Password must be at least 8 characters long and contain at least one number and one special character.</p>
+            
+            <input class="form-hidden" type="hidden" name="accountId" value="<%= locals.accountData.account_id %>">
+            
+            <button type="submit">Change Password</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>

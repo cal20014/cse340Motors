@@ -143,6 +143,7 @@ async function getAccountManagementView(req, res, next) {
 async function getUpdateAccountView(req, res, next) {
   let nav = await utilities.getNav();
   const accountData = await accountModel.getAccountById(req.params.id);
+  console.log(accountData);
   res.render("account/updateAccount", {
     title: "Update Account",
     nav,

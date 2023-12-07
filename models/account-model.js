@@ -55,15 +55,32 @@ async function getAccountByEmail(account_email) {
 /* ***********************
  * Get Account by ID
  *************************/
-async function getAccountById(account_id) {
+// async function getAccountById(account_id) {
+//   try {
+//     const result = await pool.query(
+//       "SELECT account_id, account_firstname, account_lastname, account_email, account_type, account_password FROM account WHERE account_id = $1",
+//       [account_id]
+//     );
+//     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//     console.log(result);
+//     console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//     console.log(result.rows[0]);
+//     return result.rows[0];
+//   } catch (error) {
+//     return new Error("No matching ID found");
+//   }
+// }
+
+
+async function getAccountById (account_id) {
   try {
     const result = await pool.query(
-      "SELECT account_id, account_firstname, account_lastname, account_email, account_type, account_password FROM account WHERE account_id = $1",
-      [account_id]
-    );
-    return result.rows[0];
+      'SELECT account_id, account_firstname, account_lastname, account_email, account_type, account_password FROM account WHERE account_id = $1',
+      [11])
+      console.log(result.rows[0])
+      return result.rows[0]
   } catch (error) {
-    return new Error("No matching ID found");
+    return new Error("No matching id found")
   }
 }
 

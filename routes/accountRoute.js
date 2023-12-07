@@ -58,7 +58,7 @@ router.get(
  *************************/
 
 router.get(
-  "/update/",
+  "/update/:account_id",
   utilities.checkLogin,
   utilities.handleErrors(accountController.getUpdateAccountView)
 );
@@ -68,7 +68,7 @@ router.get(
  *************************/
 
 router.post(
-  "/update/",
+  "/update-info/",
   utilities.checkLogin,
   regValidate.updateRules(),
   regValidate.checkUpdateUserData,

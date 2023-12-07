@@ -794,3 +794,105 @@ input:required:valid {
     }
   }
 }
+
+
+
+
+
+// Update Account View Styles
+
+// .error-messages {
+//   list-style-type: none;
+//   padding: 0;
+//   color: red;
+// }
+
+// .update-header {
+//   text-align: center;
+//   color: #333;
+// }
+
+// .update-form {
+//   display: flex;
+//   flex-direction: column;
+//   width: 300px;
+//   margin: 0 auto;
+
+//   .form-label {
+//     margin-bottom: 0.5em;
+//     color: #333;
+//     font-weight: bold;
+//   }
+
+//   .form-input {
+//     padding: 0.5em;
+//     margin-bottom: 1em;
+//     border: 1px solid #ddd;
+//     border-radius: 3px;
+//   }
+// }
+
+
+
+.update-account-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: $form-default-color;
+  padding: 2rem;
+  border-radius: 7px;
+}
+
+.update-account-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldset {
+  border: none;
+  padding: 0;
+}
+
+.label {
+  font-size: 1.75rem;
+  color: #000000;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+  color: #222020;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-hidden {
+  display: none;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  color: white;
+  background-color: $btn-default-color;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: rgb(83, 185, 83);
+  }
+}
+
+@media (max-width: 768px) {
+  .update-account-form-container {
+    padding: 10px;
+  }
+}
