@@ -79,7 +79,7 @@ router.post(
  *************************/
 
 router.post(
-  "/change-password/",
+  "/updatePassword/",
   utilities.checkLogin,
   regValidate.passwordRules(),
   regValidate.checkPasswordData,

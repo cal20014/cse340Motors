@@ -188,12 +188,21 @@ validate.checkUpdateUserData = async (req, res, next) => {
 
 validate.passwordRules = () => {
   return [
-    body("newPassword")
-      .isLength({ min: 8 })
-      .withMessage("Password must be at least 8 characters long"),
+    // A password is required and must be strong password
+    body("account_password")
+      .trim()
+      .isStrongPassword({
+        minLength: 12,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+      })
+      .withMessage("Password does not meet requirements."),
   ];
 };
 
+// CHANGE THIS THIS IS CAUSING BUGS. LOOK AT THE OTHERS THAT ARE LIKE THIS AND MIMIC THEM
 validate.checkPasswordData = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
