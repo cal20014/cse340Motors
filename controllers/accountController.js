@@ -156,26 +156,35 @@ async function getUpdateAccountView(req, res, next) {
  *************************/
 async function updateAccount(req, res, next) {
   let nav = await utilities.getNav();
-  const { account_firstname, account_lastname, account_email, account_id} = req.body
+  const { account_firstname, account_lastname, account_email, account_id } =
+    req.body;
   // console.log(account_firstname, account_lastname, account_email, account_id);
-  const updateResult = await accountModel.updateAccount(account_firstname, account_lastname, account_email, account_id);
+  const updateResult = await accountModel.updateAccount(
+    account_firstname,
+    account_lastname,
+    account_email,
+    account_id
+  );
   let message;
   if (updateResult) {
     message = "Account updated successfully.";
+    req.flash("notice", message);
     res.redirect("/account/");
   } else {
     message = "Failed to update account.";
+    req.flash("notice", message);
     res.status(501).render("account/updateAccount", {
-        title: "Update Account",
-        nav,
-        errors: null,
-        account_firstname,
-        account_lastname,
-        account_email,
-        account_id,
-      });
-      return;
+      title: "Update Account",
+      nav,
+      errors: null,
+      account_firstname,
+      account_lastname,
+      account_email,
+      account_id,
+    });
+    return;
   }
+  next();
 }
 
 /* ***********************

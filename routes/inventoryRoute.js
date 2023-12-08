@@ -3,6 +3,7 @@ const express = require("express");
 const router = new express.Router();
 const invController = require("../controllers/invController");
 const validate = require("../utilities/server-form-validation");
+const regValidate = require("../utilities/account-validation");
 const utilities = require("../utilities");
 
 // Route to build inventory by classification view
@@ -18,7 +19,11 @@ router.get(
 );
 
 // Route to display the inventory management view
-router.get("/", utilities.handleErrors(invController.buildInventoryManagement));
+router.get(
+  "/",
+  utilities.checkAccountType,
+  utilities.handleErrors(invController.buildInventoryManagement)
+);
 
 // Route to display the form for adding a new classification
 router.get(
@@ -43,6 +48,7 @@ router.post(
 // Route to handle the submission of the add inventory item form
 router.post(
   "/addInventory/",
+  utilities.checkAccountType,
   validate.addInventoryItemRules(),
   validate.checkAddInventoryItemData,
   utilities.handleErrors(invController.addNewInventoryItem)
@@ -51,13 +57,14 @@ router.post(
 //
 router.get(
   "/getInventory/:classification_id",
-  // utilities.checkAccountType,
+  utilities.checkAccountType,
   utilities.handleErrors(invController.getInventoryJSONData)
 );
 
 // Route to display the edit inventory item form
 router.get(
   "/edit/:inv_id",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.editInventoryView)
 );
 
@@ -74,6 +81,7 @@ router.post(
  * ************************** */
 router.get(
   "/delete/:inv_id",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.deleteInventoryView)
 );
 
