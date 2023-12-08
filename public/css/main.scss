@@ -42,6 +42,10 @@ body {
   color: rgb(192, 0, 0);
 }
 
+.success {
+  color: rgb(0, 192, 0);
+}
+
 img {
   max-width: 100%;
 }
@@ -164,25 +168,25 @@ img {
       display: flex;
       justify-content: space-between;
 
-     .tools {
-      display: flex;
+      .tools {
+        display: flex;
 
-      a {
-        text-decoration: none;
-        color: #000000;
-        padding: 1rem;
-        border: 1px dotted transparent;
-      }
+        a {
+          text-decoration: none;
+          color: #000000;
+          padding: 1rem;
+          border: 1px dotted transparent;
+        }
 
-      a:hover {
-        transition: color 500ms;
-        border: 1px dotted #000000;
-      }
+        a:hover {
+          transition: color 500ms;
+          border: 1px dotted #000000;
+        }
 
-      .text-heading {
-        padding: 1rem;
+        .text-heading {
+          padding: 1rem;
+        }
       }
-     } 
 
       .siteName .link {
         font-size: 4.8rem;
@@ -814,10 +818,6 @@ input:required:valid {
     }
   }
 }
-
-
-
-
 
 // Update Account View Styles
 .update-account-form-container {

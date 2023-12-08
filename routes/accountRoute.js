@@ -52,7 +52,6 @@ router.get(
   utilities.handleErrors(accountController.getAccountManagementView)
 );
 
-
 /* ***********************
  * Get Update Account View
  *************************/
@@ -84,10 +83,9 @@ router.post(
   utilities.checkLogin,
   regValidate.passwordRules(),
   regValidate.checkPasswordData,
-  utilities.handleErrors(accountController.changePassword)
+  utilities.handleErrors(accountController.updatePassword)
 );
 
-router.get('/logout', accountController.logout);
-
+router.get("/logout", accountController.logout);
 
 module.exports = router;

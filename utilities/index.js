@@ -192,46 +192,6 @@ Util.checkLogin = (req, res, next) => {
   }
 };
 
-// Util.checkAccountType = (req, res, next) => {
-//   const token = req.cookies.jwt;
-
-//   if (token) {
-//     jwt.verify(token, "your_secret_key", (err, decodedToken) => {
-//       if (err) {
-//         req.flash(
-//           "notice",
-//           "You must be logged in as an Employee or Admin to access this page." +
-//             err
-//         );
-//         return res.redirect("/account/login");
-//       } else {
-//         if (
-//           decodedToken.account_type === "Employee" ||
-//           decodedToken.account_type === "Admin"
-//         ) {
-//           req.flash(
-//             "success",
-//             `Welcome, ${decodedToken.account_firstname}! You are successfully logged in as an ${decodedToken.account_type}.`
-//           );
-//           next();
-//         } else {
-//           req.flash(
-//             "notice",
-//             `You must be logged in as an Employee or Admin to access this page. You are logged in as an ${decodedToken.account_type}.`
-//           );
-//           return res.redirect("/account/login");
-//         }
-//       }
-//     });
-//   } else {
-//     req.flash(
-//       "notice",
-//       "You are not logged in. You must be logged in to access this page."
-//     );
-//     return res.redirect("/account/login");
-//   }
-// };
-
 Util.checkAccountType = (req, res, next) => {
   if (req.cookies.jwt) {
     jwt.verify(
@@ -239,7 +199,10 @@ Util.checkAccountType = (req, res, next) => {
       process.env.ACCESS_TOKEN_SECRET,
       function (err, accountData) {
         if (err) {
-          req.flash("Please log in");
+          req.flash(
+            "notice",
+            "Your session has expired or is invalid. Please log in again."
+          );
           res.clearCookie("jwt");
           return res.redirect("/account/login");
         }
@@ -247,20 +210,27 @@ Util.checkAccountType = (req, res, next) => {
           accountData.account_type === "Admin" ||
           accountData.account_type === "Employee"
         ) {
+          req.flash(
+            "success",
+            `Welcome back, ${accountData.account_firstname}! You are successfully logged in as an ${accountData.account_type}.`
+          );
           res.locals.accountData = accountData;
           res.locals.loggedin = 1;
           next();
-        } else {
+        } else if (accountData.account_type === "Client") {
           req.flash(
-            "Please log in as an Admin or Employee to access this page."
+            "notice",
+            `Sorry, ${accountData.account_firstname}. You must be logged in as an Employee or Admin to access this page. You are logged in as an ${accountData.account_type}.`
           );
-          res.clearCookie("jwt");
           return res.redirect("/account/login");
         }
       }
     );
   } else {
-    req.flash("Please log in.");
+    req.flash(
+      "notice",
+      "You are not logged in. Please log in to access this page."
+    );
     return res.redirect("/account/login");
   }
 };

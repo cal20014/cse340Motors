@@ -168,7 +168,7 @@ async function updateAccount(req, res, next) {
   let message;
   if (updateResult) {
     message = "Account updated successfully.";
-    req.flash("notice", message);
+    req.flash("success", message);
     res.redirect("/account/");
   } else {
     message = "Failed to update account.";
@@ -188,52 +188,47 @@ async function updateAccount(req, res, next) {
 }
 
 /* ***********************
- * Process Change Password
+ * Process Update Password
  *************************/
-async function changePassword(req, res, next) {
+async function updatePassword(req, res, next) {
   let nav = await utilities.getNav();
-  const { account_email, oldPassword, newPassword } = req.body;
-  const errors = validate.checkPasswordData(req);
+  const { account_id, account_password } = req.body;
+  let updatedHashedPassword;
 
-  if (errors.length > 0) {
-    res.status(400).render("account/update", {
+  try {
+    updatedHashedPassword = await bcrypt.hashSync(account_password, 10);
+    const updatePasswordResult = await accountModel.updatePassword(
+      account_id,
+      updatedHashedPassword
+    );
+
+    if (updatePasswordResult) {
+      message = "Password updated successfully.";
+      req.flash("success", message);
+      res.redirect("/account/");
+    } else {
+      message = "Failed to update password.";
+      req.flash("notice", message);
+      res.status(501).render("account/updateAccount", {
+        title: "Update Account",
+        nav,
+        errors: null,
+        account_id,
+      });
+      return;
+    }
+  } catch (error) {
+    req.flash("notice", "Sorry, there was an error updating your password.");
+    res.status(501).render("account/updateAccount", {
       title: "Update Account",
       nav,
-      errors,
-      account_email,
+      errors: null,
+      account_id,
     });
     return;
   }
 
-  const hashedPassword = await bcrypt.hash(newPassword, 10);
-  const updateResult = await accountModel.updatePassword(
-    account_email,
-    hashedPassword
-  );
-
-  let message;
-  if (updateResult) {
-    message = "Password updated successfully.";
-  } else {
-    message = "Failed to update password.";
-  }
-
-  req.flash("notice", message);
-
-  const accountData = await accountModel.getAccountByEmail(account_email);
-
-  if (updateResult) {
-    res.status(200);
-  } else {
-    res.status(500);
-  }
-
-  res.render("account/management", {
-    title: "Account Management",
-    nav,
-    accountData,
-    errors: null,
-  });
+  next();
 }
 
 /* ***********************
@@ -257,6 +252,6 @@ module.exports = {
   getAccountManagementView,
   getUpdateAccountView,
   updateAccount,
-  changePassword,
+  updatePassword,
   logout,
 };
