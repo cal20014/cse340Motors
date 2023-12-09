@@ -22,7 +22,7 @@
     action="/inv/delete"
     method="post"
     id="deleteForm"
-    class="delete-inventory-form"
+    class="delete-inventory-form form-class"
   >
     <legend>*ALL FIELDS ARE REQUIRED</legend>
     <fieldset class="fieldset">
@@ -36,8 +36,7 @@
           if
           (locals.inv_make)
           {
-          %
-        />
+          %>
         value="<%= locals.inv_make %>" <% } %>>
 
         <label class="label" for="inv_model">Model:</label>
@@ -49,8 +48,7 @@
           if
           (locals.inv_model)
           {
-          %
-        />
+          %>
         value="<%= locals.inv_model %>" <% } %>>
 
         <label class="label" for="inv_year">Year:</label>
@@ -62,8 +60,7 @@
           if
           (locals.inv_year)
           {
-          %
-        />
+          %>
         value="<%= locals.inv_year %>" <% } %>>
 
         <label class="label" for="inv_price">Price:</label>
@@ -75,15 +72,15 @@
           if
           (locals.inv_price)
           {
-          %
-        />
+          %>
         value="<%= locals.inv_price %>" <% } %>>
       </div>
 
-      <button type="button" name="submit">Delete Vehicle</button>
+      <button type="submit" id="invSubmit"  name="submit">Delete Vehicle</button>
 
-      <input type="hidden" name="inv_id" <% if(locals.inv_id) { % /> value="<%=
-      locals.inv_id %>" <% } %>>
+      <input type="hidden" name="inv_id"
+      <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+      <% } %>>
     </fieldset>
   </form>
 </div>

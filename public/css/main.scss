@@ -903,3 +903,140 @@ button {
     padding: 10px;
   }
 }
+
+
+/* ******************************
+ *  Delete inventory view styles
+ * ***************************** */
+
+ .delete-inventory-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: $form-default-color;
+  padding: 2rem;
+  border-radius: 7px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+
+  .delete-inventory-form {
+    display: flex;
+    flex-direction: column;
+
+    .fieldset {
+      border: none;
+      padding: 0;
+    }
+
+    .label {
+      font-size: 1.75rem;
+      color: #000000;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      display: block;
+      font-weight: bold;
+      color: #222020;
+    }
+
+    .input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-hidden {
+      display: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      color: white;
+      background-color: $btn-default-color;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+
+      &:hover {
+        background-color: rgb(83, 185, 83);
+      }
+    }
+  }
+}
+
+
+/* *******************************
+ *  Edit inventory view styles
+ * ***************************** */
+.edit-inventory-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $form-default-color;
+  border-radius: 7px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+
+  form.edit-inventory-form {
+    display: flex;
+    flex-direction: column;
+
+    fieldset.fieldset {
+      border: none;
+      padding: 0;
+
+      div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        label.label {
+          font-size: 1.75rem;
+          color: #222020;
+          margin-bottom: 5px;
+          display: block;
+          font-weight: bold;
+        }
+
+        input.input, textarea {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+
+        textarea {
+          resize: vertical;
+        }
+      }
+
+      button {
+        padding: 10px 20px;
+        color: white;
+        background-color: $btn-default-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+
+        &:hover {
+          background-color: rgb(83, 185, 83);
+        }
+      }
+
+      input[type="hidden"] {
+        display: none;
+      }
+    }
+  }
+}

@@ -71,6 +71,9 @@ validate.checkRegData = async (req, res, next) => {
   next();
 };
 
+/* ******************************
+ * Login data validation Rules
+ * ***************************** */
 validate.loginRules = () => {
   return [
     // A valid email is required and cannot already exist in the database
@@ -102,6 +105,10 @@ validate.loginRules = () => {
   ];
 };
 
+/* ******************************
+ *  Check data and return errors or continue to login
+ * ***************************** */
+
 validate.checkLoginData = async (req, res, next) => {
   const { account_email, account_password } = req.body;
   let errors = [];
@@ -119,6 +126,10 @@ validate.checkLoginData = async (req, res, next) => {
   }
   next();
 };
+
+/* ******************************
+ *  Update Account Data Validation Rules
+ * ***************************** */
 
 validate.updateRules = () => {
   return [
@@ -164,6 +175,9 @@ validate.updateRules = () => {
   ];
 };
 
+/* ******************************
+ *  Check data and return errors or continue to update
+ * ***************************** */
 validate.checkUpdateUserData = async (req, res, next) => {
   let nav = await utilities.getNav();
   const { account_firstname, account_lastname, account_email, account_id } =
@@ -186,6 +200,10 @@ validate.checkUpdateUserData = async (req, res, next) => {
   next();
 };
 
+/* ******************************
+ * Update Password Data Validation Rules
+ * ***************************** */
+
 validate.passwordRules = () => {
   return [
     // A password is required and must be strong password
@@ -198,15 +216,33 @@ validate.passwordRules = () => {
         minNumbers: 1,
         minSymbols: 1,
       })
-      .withMessage("Password does not meet requirements."),
+      .withMessage(
+        "Password does not meet requirements.\n *Must be at least 12 characters long\n *Must contain at least 1 lowercase letter\n *Must contain at least 1 uppercase letter\n *Must contain at least 1 number\n *Must contain at least 1 symbol\n"
+      ),
   ];
 };
 
-// CHANGE THIS THIS IS CAUSING BUGS. LOOK AT THE OTHERS THAT ARE LIKE THIS AND MIMIC THEM
-validate.checkPasswordData = (req, res, next) => {
-  const errors = validationResult(req);
+/* ******************************
+ *  Check data and return errors or continue to update
+ * ***************************** */
+validate.checkPasswordData = async (req, res, next) => {
+  let nav = await utilities.getNav();
+  const { account_firstname, account_lastname, account_email, account_id } =
+    req.body;
+  let errors = [];
+  errors = validationResult(req);
+  console.log(errors);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    res.render("account/updateAccount", {
+      title: "Update Account",
+      nav,
+      errors,
+      account_firstname,
+      account_lastname,
+      account_email,
+      account_id,
+    });
+    return;
   }
   next();
 };

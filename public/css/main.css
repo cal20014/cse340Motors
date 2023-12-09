@@ -726,4 +726,123 @@ button:hover {
   .update-account-form-container {
     padding: 10px;
   }
+}
+/* ******************************
+ *  Delete inventory view styles
+ * ***************************** */
+.delete-inventory-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #00a7e4;
+  padding: 2rem;
+  border-radius: 7px;
+}
+@media (max-width: 768px) {
+  .delete-inventory-form-container {
+    padding: 10px;
+  }
+}
+.delete-inventory-form-container .delete-inventory-form {
+  display: flex;
+  flex-direction: column;
+}
+.delete-inventory-form-container .delete-inventory-form .fieldset {
+  border: none;
+  padding: 0;
+}
+.delete-inventory-form-container .delete-inventory-form .label {
+  font-size: 1.75rem;
+  color: #000000;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+  color: #222020;
+}
+.delete-inventory-form-container .delete-inventory-form .input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.delete-inventory-form-container .delete-inventory-form .form-hidden {
+  display: none;
+}
+.delete-inventory-form-container .delete-inventory-form button {
+  padding: 10px 20px;
+  color: white;
+  background-color: #005400;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.delete-inventory-form-container .delete-inventory-form button:hover {
+  background-color: rgb(83, 185, 83);
+}
+
+/* *******************************
+ *  Edit inventory view styles
+ * ***************************** */
+.edit-inventory-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #00a7e4;
+  border-radius: 7px;
+}
+@media (max-width: 768px) {
+  .edit-inventory-form-container {
+    padding: 10px;
+  }
+}
+.edit-inventory-form-container form.edit-inventory-form {
+  display: flex;
+  flex-direction: column;
+}
+.edit-inventory-form-container form.edit-inventory-form fieldset.fieldset {
+  border: none;
+  padding: 0;
+}
+.edit-inventory-form-container form.edit-inventory-form fieldset.fieldset div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.edit-inventory-form-container form.edit-inventory-form fieldset.fieldset div label.label {
+  font-size: 1.75rem;
+  color: #222020;
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+}
+.edit-inventory-form-container form.edit-inventory-form fieldset.fieldset div input.input, .edit-inventory-form-container form.edit-inventory-form fieldset.fieldset div textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.edit-inventory-form-container form.edit-inventory-form fieldset.fieldset div textarea {
+  resize: vertical;
+}
+.edit-inventory-form-container form.edit-inventory-form fieldset.fieldset button {
+  padding: 10px 20px;
+  color: white;
+  background-color: #005400;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.edit-inventory-form-container form.edit-inventory-form fieldset.fieldset button:hover {
+  background-color: rgb(83, 185, 83);
+}
+.edit-inventory-form-container form.edit-inventory-form fieldset.fieldset input[type=hidden] {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
