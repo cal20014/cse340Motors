@@ -379,6 +379,9 @@ img {
     width: 48%; /* Adjust this value if needed */
   }
 }
+/* ***************************
+ *  Login view styles
+ * ************************** */
 .login-content-wrapper {
   display: flex;
   justify-content: center;
@@ -424,6 +427,12 @@ img {
 }
 .login-content-wrapper .sign-up-wrapper {
   padding: 1.5rem;
+}
+.login-content-wrapper .sign-up-wrapper a {
+  color: #000000;
+}
+.login-content-wrapper .sign-up-wrapper a:hover {
+  color: #be0000;
 }
 
 .register-content-wrapper {
@@ -845,4 +854,51 @@ button:hover {
 }
 .edit-inventory-form-container form.edit-inventory-form fieldset.fieldset input[type=hidden] {
   display: none;
+}
+
+/* *******************************
+ *  Account Management view styles
+ * ***************************** */
+.account-management-wrapper {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+.account-management-wrapper .welcome-message {
+  font-size: 2em;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.account-management-wrapper .inventory-heading {
+  font-size: 1.5em;
+  color: #000000;
+  margin-bottom: 5px;
+}
+.account-management-wrapper .inventory-link {
+  font-size: 1em;
+  color: #212529;
+  margin-bottom: 15px;
+}
+.account-management-wrapper .inventory-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+.account-management-wrapper .inventory-link a:hover {
+  color: #0056b3;
+}
+.account-management-wrapper .manage-account-heading {
+  font-size: 1.5em;
+  color: #495057;
+  margin-bottom: 5px;
+}
+.account-management-wrapper .update-link {
+  font-size: 1em;
+  color: #212529;
+  margin-bottom: 15px;
+}
+.account-management-wrapper .update-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+.account-management-wrapper .update-link a:hover {
+  color: #0056b3;
 }/*# sourceMappingURL=main.css.map */

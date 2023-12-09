@@ -483,9 +483,10 @@ img {
     width: 48%; /* Adjust this value if needed */
   }
 }
-
-// Login view styles
-
+ 
+/* ***************************
+ *  Login view styles
+ * ************************** */
 .login-content-wrapper {
   display: flex;
   justify-content: center;
@@ -539,6 +540,16 @@ img {
   }
   .sign-up-wrapper {
     padding: 1.5rem;
+
+    a {
+      color: #000000;
+    
+    }
+
+    a:hover {
+      color: #be0000;
+    }
+
   }
 }
 
@@ -1036,6 +1047,66 @@ button {
 
       input[type="hidden"] {
         display: none;
+      }
+    }
+  }
+}
+
+
+
+/* *******************************
+ *  Account Management view styles
+ * ***************************** */
+
+
+.account-management-wrapper {
+  padding: 20px;
+  background-color: #f8f9fa;
+
+  .welcome-message {
+    font-size: 2em;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+
+  .inventory-heading {
+    font-size: 1.5em;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+
+  .inventory-link {
+    font-size: 1em;
+    color: #212529;
+    margin-bottom: 15px;
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+
+      &:hover {
+        color: #0056b3;
+      }
+    }
+  }
+
+  .manage-account-heading {
+    font-size: 1.5em;
+    color: #495057;
+    margin-bottom: 5px;
+  }
+
+  .update-link {
+    font-size: 1em;
+    color: #212529;
+    margin-bottom: 15px;
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+
+      &:hover {
+        color: #0056b3;
       }
     }
   }
