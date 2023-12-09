@@ -47,7 +47,7 @@ body {
 }
 
 .success {
-  color: rgb(0, 192, 0);
+  color: rgb(2, 116, 0);
 }
 
 img {
@@ -1077,15 +1077,20 @@ button {
 
   .inventory-link {
     font-size: 1em;
-    color: #212529;
     margin-bottom: 15px;
 
     a {
-      color: #007bff;
-      text-decoration: none;
+      color: #ffffff;
+      // text-decoration: none;
+      background-color: #c20000;
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
 
       &:hover {
-        color: #0056b3;
+        background-color: #ff1515;
       }
     }
   }
@@ -1102,11 +1107,17 @@ button {
     margin-bottom: 15px;
 
     a {
-      color: #007bff;
-      text-decoration: none;
+      color: #ffffff;
+      // text-decoration: none;
+      background-color: #c20000;
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
 
       &:hover {
-        color: #0056b3;
+        background-color: #ff1515;
       }
     }
   }

@@ -39,7 +39,7 @@ body {
 }
 
 .success {
-  color: rgb(0, 192, 0);
+  color: rgb(2, 116, 0);
 }
 
 img {
@@ -875,15 +875,19 @@ button:hover {
 }
 .account-management-wrapper .inventory-link {
   font-size: 1em;
-  color: #212529;
   margin-bottom: 15px;
 }
 .account-management-wrapper .inventory-link a {
-  color: #007bff;
-  text-decoration: none;
+  color: #ffffff;
+  background-color: #c20000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
 .account-management-wrapper .inventory-link a:hover {
-  color: #0056b3;
+  background-color: #ff1515;
 }
 .account-management-wrapper .manage-account-heading {
   font-size: 1.5em;
@@ -896,9 +900,14 @@ button:hover {
   margin-bottom: 15px;
 }
 .account-management-wrapper .update-link a {
-  color: #007bff;
-  text-decoration: none;
+  color: #ffffff;
+  background-color: #c20000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
 .account-management-wrapper .update-link a:hover {
-  color: #0056b3;
+  background-color: #ff1515;
 }/*# sourceMappingURL=main.css.map */
