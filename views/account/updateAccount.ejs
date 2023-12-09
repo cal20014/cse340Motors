@@ -79,11 +79,13 @@
           id="account_password"
           name="account_password"
           required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}"
+          title="Must contain at least one number, one uppercase letter, one lowercase letter, one special character, and at least 12 or more characters"
         />
 
         <p class="password-requirements">
-          Password must be at least 8 characters long and contain at least one
-          number and one special character.
+          Passwords must be minimum of 12 characters and include 1 capital
+          letter, 1 number, and 1 special character.
         </p>
 
         <input

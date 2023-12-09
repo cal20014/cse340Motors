@@ -36,11 +36,9 @@
           if
           (locals.inv_make)
           {
-          %>
-          value="<%= locals.inv_make %>"
-          <%
-          }
-          %>>
+          %
+        />
+        value="<%= locals.inv_make %>" <% } %>>
 
         <label class="label" for="inv_model">Model:</label>
         <input
@@ -51,11 +49,9 @@
           if
           (locals.inv_model)
           {
-          %>
-          value="<%= locals.inv_model %>"
-          <%
-          }
-          %>>
+          %
+        />
+        value="<%= locals.inv_model %>" <% } %>>
 
         <label class="label" for="inv_year">Year:</label>
         <input
@@ -66,11 +62,9 @@
           if
           (locals.inv_year)
           {
-          %>
-          value="<%= locals.inv_year %>"
-          <%
-          }
-          %>>
+          %
+        />
+        value="<%= locals.inv_year %>" <% } %>>
 
         <label class="label" for="inv_price">Price:</label>
         <input
@@ -81,16 +75,14 @@
           if
           (locals.inv_price)
           {
-          %>
-          value="<%= locals.inv_price %>"
-          <%
-          }
-          %>>
+          %
+        />
+        value="<%= locals.inv_price %>" <% } %>>
       </div>
 
-      <button type="button" name="submit" >Delete Vehicle</button>
+      <button type="button" name="submit">Delete Vehicle</button>
 
-      <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%=
+      <input type="hidden" name="inv_id" <% if(locals.inv_id) { % /> value="<%=
       locals.inv_id %>" <% } %>>
     </fieldset>
   </form>

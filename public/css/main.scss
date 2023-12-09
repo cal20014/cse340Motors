@@ -24,6 +24,10 @@ html {
   box-sizing: border-box;
 }
 
+button {
+  background-color: $btn-default-color;
+}
+
 *,
 *::before,
 *::after {
@@ -507,6 +511,11 @@ img {
       flex-direction: column;
       border-radius: 3px;
       padding: 1rem;
+
+      label {
+        border: none;
+        padding: 0;
+      }
     }
 
     .input {
@@ -524,7 +533,8 @@ img {
     }
 
     .submit-btn {
-      max-width: 50px;
+      color: #fff; // Set the text color of the submit button
+      border: none; // Remove the border of the submit button
     }
   }
   .sign-up-wrapper {
@@ -829,6 +839,17 @@ input:required:valid {
   background-color: $form-default-color;
   padding: 2rem;
   border-radius: 7px;
+
+  .show-password-btn {
+    border-radius: 5px;
+    max-width: 150px;
+    background-color: #30363d;
+    padding: 0.3rem;
+    margin: 0 0 1rem;
+    color: #fff;
+    display: block;
+    text-align: center;
+  }
 }
 
 .update-account-form {
@@ -863,7 +884,7 @@ input:required:valid {
   display: none;
 }
 
-button[type="submit"] {
+button {
   padding: 10px 20px;
   color: white;
   background-color: $btn-default-color;

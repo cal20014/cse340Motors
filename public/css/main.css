@@ -18,6 +18,10 @@ html {
   box-sizing: border-box;
 }
 
+button {
+  background-color: #005400;
+}
+
 *,
 *::before,
 *::after {
@@ -32,6 +36,10 @@ body {
 
 .notice {
   color: rgb(192, 0, 0);
+}
+
+.success {
+  color: rgb(0, 192, 0);
 }
 
 img {
@@ -394,6 +402,10 @@ img {
   border-radius: 3px;
   padding: 1rem;
 }
+.login-content-wrapper .login-form .form-wrapper label {
+  border: none;
+  padding: 0;
+}
 .login-content-wrapper .login-form .input {
   display: block;
 }
@@ -407,7 +419,8 @@ img {
   text-align: center;
 }
 .login-content-wrapper .login-form .submit-btn {
-  max-width: 50px;
+  color: #fff;
+  border: none;
 }
 .login-content-wrapper .sign-up-wrapper {
   padding: 1.5rem;
@@ -653,6 +666,16 @@ input:required:valid {
   padding: 2rem;
   border-radius: 7px;
 }
+.update-account-form-container .show-password-btn {
+  border-radius: 5px;
+  max-width: 150px;
+  background-color: #30363d;
+  padding: 0.3rem;
+  margin: 0 0 1rem;
+  color: #fff;
+  display: block;
+  text-align: center;
+}
 
 .update-account-form {
   display: flex;
@@ -686,7 +709,7 @@ input:required:valid {
   display: none;
 }
 
-button[type=submit] {
+button {
   padding: 10px 20px;
   color: white;
   background-color: #005400;
@@ -695,7 +718,7 @@ button[type=submit] {
   cursor: pointer;
   margin-top: 10px;
 }
-button[type=submit]:hover {
+button:hover {
   background-color: rgb(83, 185, 83);
 }
 
